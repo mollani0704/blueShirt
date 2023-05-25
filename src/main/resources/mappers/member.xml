@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.project.blueshirt.repository.member.MemberRepository">
+	
+	<insert id="saveMember" parameterType="com.project.blueshirt.model.Member">
+	
+		insert into
+			member
+		values(
+			0, 
+			#{username},
+			#{userId},
+			#{password},
+			#{address},
+			now(),
+			now()
+		)
+	
+	</insert>
+
+</mapper>
