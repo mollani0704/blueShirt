@@ -19,5 +19,20 @@
 		)
 	
 	</insert>
+	
+	<select id="readMember" parameterType="com.project.blueshirt.dto.SignInDto" 
+	resultType="com.project.blueshirt.model.Member">
+	
+		select
+			id,
+			username,
+			userId,
+			address
+		from
+			member
+		where
+			userId = #{userId} and password = #{password};
+	
+	</select>
 
 </mapper>
