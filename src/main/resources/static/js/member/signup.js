@@ -8,7 +8,7 @@ const address = document.querySelector("#address");
 const signup_button = document.querySelector(".button");
 
 signup_button.addEventListener('click', () => {
-	
+
 	let data = {
 		username : username.value,
 		userId : userId.value,
@@ -19,7 +19,7 @@ signup_button.addEventListener('click', () => {
 	$.ajax({
 		async: false,
 		type: "POST",
-		url: "/signup",
+		url: "/auth/signup",
 		data: JSON.stringify(data),
 		contentType: "application/json; charset=utf-8",
 		dataType: "json",
@@ -30,4 +30,5 @@ signup_button.addEventListener('click', () => {
 	.fail((error) => {
 		console.log(error)
 	})
+	
 })

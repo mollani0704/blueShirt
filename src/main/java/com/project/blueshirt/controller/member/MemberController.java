@@ -17,7 +17,7 @@ public class MemberController {
 	
 	private final MemberService memberService;
 	
-	@PostMapping("/signup")
+	@PostMapping("/auth/signup")
 	public ResponseEntity<?> signup(@RequestBody Member member) {
 		
 		boolean status = false;
@@ -32,18 +32,20 @@ public class MemberController {
 		return ResponseEntity.ok().body(status);	
 	}
 	
-	@PostMapping("/signin")
-	public ResponseEntity<?> signin(@RequestBody SignInDto signInDto) {
-		
-		boolean status = false;
-		try {
-			status = memberService.signInMember(signInDto);
-		} catch (Exception e) {
-			e.printStackTrace();
-			return ResponseEntity.internalServerError().body(status);
-		}
-		
-		return ResponseEntity.ok().body(status);
-	}
+//	@PostMapping("/auth/signin")
+//	public ResponseEntity<?> signin(@RequestBody Member member) {
+//		
+//		boolean status = false;
+//		try {
+//			status = memberService.signInMember(member);
+//			System.out.println(member.getUserId());
+//			System.out.println(member.getPassword());
+//		} catch (Exception e) {
+//			e.printStackTrace();
+//			return ResponseEntity.internalServerError().body(status);
+//		}
+//		
+//		return ResponseEntity.ok().body(status);
+//	}
 	
 }

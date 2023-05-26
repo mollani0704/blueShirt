@@ -14,13 +14,14 @@
 			#{userId},
 			#{password},
 			#{address},
+			role,
 			now(),
 			now()
 		)
 	
 	</insert>
 	
-	<select id="readMember" parameterType="com.project.blueshirt.dto.SignInDto" 
+	<select id="readMember" parameterType="com.project.blueshirt.model.Member" 
 	resultType="com.project.blueshirt.model.Member">
 	
 		select
@@ -32,6 +33,22 @@
 			member
 		where
 			userId = #{userId} and password = #{password};
+	
+	</select>
+	
+	<select id="findByUsername" parameterType="String" resultType="com.project.blueshirt.model.Member">
+	
+		select
+			id,
+			username,
+			userId,
+			password,
+			address,
+			role
+		from
+			member
+		where
+			userId = #{userId}
 	
 	</select>
 
