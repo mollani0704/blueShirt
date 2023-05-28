@@ -30,10 +30,10 @@ public class MemberServiceImpl implements MemberService{
 	}
 
 	@Override
-	public Boolean signInMember(Member member) throws Exception {
+	public Boolean findMember(String userId) throws Exception {
 		
 		Boolean result = false;
-		Member memberEntity = memberRepository.readMember(member);
+		Member memberEntity = memberRepository.findByUsername(userId);
 		
 		if(memberEntity == null) {
 			result = false;

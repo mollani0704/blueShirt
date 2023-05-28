@@ -1,10 +1,10 @@
-package com.project.blueshirt.controller;
+package com.project.blueshirt.controller.member;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 
 @Controller
-public class PageController {
+public class MemberPageController {
 
 	@GetMapping("/")
 	public String indexPage() {

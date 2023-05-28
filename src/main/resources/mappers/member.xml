@@ -20,7 +20,7 @@
 		)
 	
 	</insert>
-	
+	<!-- 
 	<select id="readMember" parameterType="com.project.blueshirt.model.Member" 
 	resultType="com.project.blueshirt.model.Member">
 	
@@ -35,7 +35,7 @@
 			userId = #{userId} and password = #{password};
 	
 	</select>
-	
+	 -->
 	<select id="findByUsername" parameterType="String" resultType="com.project.blueshirt.model.Member">
 	
 		select

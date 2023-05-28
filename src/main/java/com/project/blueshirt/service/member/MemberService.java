@@ -6,6 +6,6 @@ import com.project.blueshirt.model.Member;
 public interface MemberService{
 	
 	public Boolean signUpMember(Member member) throws Exception;
-	public Boolean signInMember(Member member) throws Exception;
+	public Boolean findMember(String userId) throws Exception;
 
 }
