@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<meta charset="UTF-8">
+	    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	    <script type="text/javascript" src="https://code.jquery.com/jquery-latest.min.js"></script>
+	    <script src="/static/js/estimate/estimate.js" defer></script>
+	    <title>Document</title>
+	</head>
+	<body>
+		<h1>견적문의</h1>
+		<form enctype="multipart/form-data">
+			<label>제목</label>
+			<input class="title" name="title" type="text" placeholder="제목을 적어주세요"><br>
+			<label>사진</label>
+			<input class="image" name="imageFiles" type="file" placeholder="첨부파일" multiple accept=".jpg, .jpeg, .png, .gif"><br>
+			<label>내용</label>
+			<textarea class="content" name="content" rows="15" cols="30"></textarea>
+			<label>비밀번호</label>
+			<input class="password" type="password" name="password" placeholder="비밀번호 숫자 4자리를 입력해주세요"><br>
+		</form>
+		<button class="save__btn">저장</button>
+		<button class="cancel__btn">취소</button>		
+	</body>
+</html>

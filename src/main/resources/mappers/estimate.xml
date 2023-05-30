@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.project.blueshirt.repository.estimate.EstimateRepository">
+	
+	<insert id="saveEstimate" parameterType="com.project.blueshirt.model.Estimate"
+	useGeneratedKeys="true" keyProperty="code">
+	
+		insert into
+			estimate
+		values(
+			0, 
+			#{title},
+			#{category},
+			#{content},
+			#{password},
+			now(),
+			now()
+		)
+	
+	</insert>
+
+	<insert id="saveEstimateImgFiles" parameterType="com.project.blueshirt.model.Estimate">
+	
+		insert into
+			estimate_img
+		values
+		<foreach collection="list" item="file" separator=",">
+		(
+			0, 
+			#{file.estimate_code},
+			#{file.file_name},
+			now(),
+			now()
+		)
+		</foreach>
+	</insert>
+
+</mapper>
