@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.project.blueshirt.repository.item.ItemRepository">
+	
+	<insert id="saveItem" parameterType="com.project.blueshirt.model.Item"
+	useGeneratedKeys="true" keyProperty="code">
+	
+		insert into
+			item
+		values(
+			0, 
+			#{item_name},
+			#{price},
+			#{stockQuantity}
+		)
+	
+	</insert>
+
+	<insert id="saveItemImgFiles" parameterType="com.project.blueshirt.model.ItemImgFile">
+	
+		insert into
+			item_img
+		values
+		<foreach collection="list" item="file" separator=",">
+		(
+			0, 
+			#{file.item_code},
+			#{file.file_name},
+			now(),
+			now()
+		)
+		</foreach>
+	</insert>
+
+</mapper>
