@@ -2,34 +2,33 @@
 <!DOCTYPE mapper
   PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.project.blueshirt.repository.estimate.EstimateRepository">
+<mapper namespace="com.project.blueshirt.repository.review.ReviewRepository">
 	
-	<insert id="saveEstimate" parameterType="com.project.blueshirt.model.Estimate"
+	<insert id="saveReview" parameterType="com.project.blueshirt.model.Review"
 	useGeneratedKeys="true" keyProperty="code">
 	
 		insert into
-			estimate
+			review
 		values(
 			0, 
 			#{title},
 			#{category},
 			#{content},
-			#{password},
 			now(),
 			now()
 		)
 	
 	</insert>
 
-	<insert id="saveEstimateImgFiles" parameterType="com.project.blueshirt.model.EstimateImgFile">
+	<insert id="saveReviewImgFiles" parameterType="com.project.blueshirt.model.ReviewImgFile">
 	
 		insert into
-			estimate_img
+			review_img
 		values
 		<foreach collection="list" item="file" separator=",">
 		(
 			0, 
-			#{file.estimate_code},
+			#{file.review_code},
 			#{file.file_name},
 			now(),
 			now()
