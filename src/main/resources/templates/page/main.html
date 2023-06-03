@@ -1,14 +1,36 @@
 <!DOCTYPE html>
 <html lang="ko" xmlns:th="http://www.thymeleaf.org">
-	<head>
-		<meta charset="UTF-8">
-	    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-	    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	    <title>Document</title>
-	</head>
-	<body>
-	<div>It's test</div>
-	<button onclick="location.href='/signup'">회원가입</button>
-	<button onclick="location.href='/signin'">로그인</button>
-	</body>	
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="/static/css/style.css" />
+        <link rel="stylesheet" href="/static/css/index.css" />
+        <title>Document</title>
+    </head>
+    <body>
+        <div class="container">
+            <header class="header">
+                <div class="logo">
+                    <img src="/static/img/logo2.JPG" alt="logo" />
+                </div>
+                <ul class="menu">
+                    <li class="menu__item">청남방 소개</li>
+                    <li class="menu__item">청소용품</li>
+                    <li class="menu__item">견적문의</li>
+                    <li class="menu__item">작업후기</li>
+                </ul>
+                <!-- <ul class="login__menu">
+                    <li class="login">로그인</li>
+                    <li class="signup">회원가입</li>
+                    <li>고객센터</li>
+                </ul> -->
+            </header>
+            <section class="body">body</section>
+            <footer class="footer">footer</footer>
+            <!-- <div>It's test</div> -->
+            <!-- <button onclick="location.href='/signup'">회원가입</button> -->
+            <!-- <button onclick="location.href='/signin'">로그인</button> -->
+        </div>
+    </body>
 </html>
