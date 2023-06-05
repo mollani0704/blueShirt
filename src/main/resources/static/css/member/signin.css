@@ -1,0 +1,38 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.login__header {
+    width: 100%;
+    height: 300px;
+    background-color: white;
+    text-align: center;
+}
+
+.login__info {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 500px;
+    background-color: bisque;
+}
+
+.login__form {
+    display: flex;
+    width: 800px;
+    height: 400px;
+    background-color: white;
+}
+
+.login__left {
+    flex: 1;
+    background-color: aqua;
+}
+.login__right {
+    flex: 0.6;
+    background-color: blue;
+}

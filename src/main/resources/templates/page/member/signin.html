@@ -1,20 +1,47 @@
 <!DOCTYPE html>
 <html lang="ko" xmlns:th="http://www.thymeleaf.org">
-	<head>
-		<meta charset="UTF-8">
-	    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-	    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	    <script type="text/javascript" src="https://code.jquery.com/jquery-latest.min.js"></script>
-	    <script src="/static/js/member/signin.js" defer></script>
-	    <title>Document</title>
-	</head>
-	<body>
-		<form method="post" action="/auth/loginProc">
-			<label for="userId">닉네임</label>
-			<input id="userId" name="username" type="text" placeholder="닉네임을 입력해주세요"><br>
-			<label for="password">비밀번호</label>
-			<input id="password" name="password" type="password" placeholder="패스워드를 입력해주세요"><br>
-			<button class="button">로그인</button>
-		</form>
-	</body>
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="/static/css/member/signin.css" />
+        <script
+            type="text/javascript"
+            src="https://code.jquery.com/jquery-latest.min.js"
+        ></script>
+        <script src="/static/js/member/signin.js" defer></script>
+        <title>Document</title>
+    </head>
+    <body>
+        <div class="container">
+            <div class="login__header">
+                <h1>로그인</h1>
+                <p>청남방 로그인 페이지입니다.</p>
+            </div>
+            <div class="login__info">
+                <div class="login__form">
+                    <div class="login__left">
+                        <form method="post" action="/auth/loginProc">
+                            <label for="userId">닉네임</label>
+                            <input
+                                id="userId"
+                                name="username"
+                                type="text"
+                                placeholder="닉네임을 입력해주세요"
+                            /><br />
+                            <label for="password">비밀번호</label>
+                            <input
+                                id="password"
+                                name="password"
+                                type="password"
+                                placeholder="패스워드를 입력해주세요"
+                            /><br />
+                            <button class="button">로그인</button>
+                        </form>
+                    </div>
+                    <div class="login__right">2</div>
+                </div>
+            </div>
+        </div>
+    </body>
 </html>
