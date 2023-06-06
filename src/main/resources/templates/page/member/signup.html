@@ -1,28 +1,60 @@
 <!DOCTYPE html>
 <html lang="ko" xmlns:th="http://www.thymeleaf.org">
-	<head>
-		<meta charset="UTF-8">
-	    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-	    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	    <script type="text/javascript" src="https://code.jquery.com/jquery-latest.min.js"></script>
-	    <script src="/static/js/member/signup.js" defer></script>
-	    
-	    <title>Document</title>
-	</head>
-	<body>
-		<form method="post">
-			<label for="username">이름</label>
-			<input id="username" name="username" type="text" placeholder="이름을 입력해주세요"><br>
-			<label for="userId">닉네임</label>
-			<input id="userId" name="userId" type="text" placeholder="닉네임을 입력해주세요"><br>
-			<button class="check__id--btn">중복확인</button><br>
-			<label for="password">비밀번호</label>
-			<input id="password" name="password" type="password" placeholder="패스워드를 입력해주세요"><br>
-			<label for="address">주소</label>
-			<input id="address" name="address" type="text" placeholder="주소를 입력해주세요"><br>
-		</form>
-		<button class="button">회원가입</button>
-		
-		
-	</body>
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="/static/css/member/signup.css" />
+        <script
+            type="text/javascript"
+            src="https://code.jquery.com/jquery-latest.min.js"
+        ></script>
+        <script src="/static/js/member/signup.js" defer></script>
+
+        <title>Document</title>
+    </head>
+    <body>
+        <div class="container">
+            <div class="signup__header">
+                <h1>회원가입</h1>
+                <p>청남방 회원가입 페이지 입니다.</p>
+            </div>
+            <div class="signup__info">
+                <div class="signup__form">
+                    <form method="post">
+                        <label for="username">이름</label>
+                        <input
+                            id="username"
+                            name="username"
+                            type="text"
+                            placeholder="이름을 입력해주세요"
+                        /><br />
+                        <label for="userId">닉네임</label>
+                        <input
+                            id="userId"
+                            name="userId"
+                            type="text"
+                            placeholder="닉네임을 입력해주세요"
+                        /><br />
+                        <button class="check__id--btn">중복확인</button><br />
+                        <label for="password">비밀번호</label>
+                        <input
+                            id="password"
+                            name="password"
+                            type="password"
+                            placeholder="패스워드를 입력해주세요"
+                        /><br />
+                        <label for="address">주소</label>
+                        <input
+                            id="address"
+                            name="address"
+                            type="text"
+                            placeholder="주소를 입력해주세요"
+                        /><br />
+                    </form>
+                    <button class="button">회원가입</button>
+                </div>
+            </div>
+        </div>
+    </body>
 </html>
