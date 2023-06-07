@@ -47,7 +47,7 @@ public class SecurityConfig {
 			.authorizeRequests()
 				.antMatchers("/", "/signin", "/signup", 
 							"/auth/**", "/estimates/**",
-							"/items/**" ,"/review/**" ,"/api/**" )
+							"/items/**" ,"/review/**" ,"/admin/**", "/api/**" )
 				.permitAll()
 				.anyRequest()
 				.authenticated()

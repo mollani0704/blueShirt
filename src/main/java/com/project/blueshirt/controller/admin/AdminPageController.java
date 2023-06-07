@@ -1,4 +1,4 @@
-package com.project.blueshirt.controller.item;
+package com.project.blueshirt.controller.admin;
 
 import java.util.List;
 
@@ -13,12 +13,17 @@ import lombok.RequiredArgsConstructor;
 
 @Controller
 @RequiredArgsConstructor
-public class ItemPageController {
+public class AdminPageController {
 	
 	private final ItemService itemService;
 	
-	@GetMapping("/items")
-	public String itemListPage(Model model) {
+	@GetMapping("/admin")
+	public String adminPage() {
+		return "/page/admin/admin";
+	}
+	
+	@GetMapping("/admin/items")
+	public String adminItemList(Model model) {
 		
 		try {
 			List<Item> itemLists = itemService.getItems();
@@ -29,7 +34,11 @@ public class ItemPageController {
 			System.out.println("오류 발생");
 		}
 		
-		return "/page/item/item";
+		return "/page/admin/item/admin_item";
 	}
 	
+	@GetMapping("/admin/items/save")
+	public String adminItemSave() {
+		return "/page/admin/item/admin_itemSave";
+	}
 }

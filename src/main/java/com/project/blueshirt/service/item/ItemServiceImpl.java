@@ -88,4 +88,16 @@ public class ItemServiceImpl implements ItemService{
 		return result;
 	}
 
+	@Override
+	public List<Item> getItems() throws Exception {
+
+		List<Item> items = new ArrayList<>();
+
+		itemRepository.getItemList().forEach(item -> {
+			items.add(item);
+		});
+		
+		return items;
+	}
+
 }

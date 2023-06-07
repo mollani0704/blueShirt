@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<meta charset="UTF-8">
+	    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	    <script type="text/javascript" src="https://code.jquery.com/jquery-latest.min.js"></script>
+	    <script src="/static/js/item/admin_itemUpdate.js" defer></script>
+	    <title>Document</title>
+	</head>
+	<body>
+		<h1>상품목록</h1>
+		<div>
+			<ul th:each="item : ${itemLists}">
+			<form enctype="multipart/form-data">
+				<li class="item__code" th:text="${item.code}" th:value="${item.code}"></li>
+				<label>상품이름</label>
+				<input class="item__name" type="text" th:value="${item.item_name}" /><br>
+				<label>가격</label>
+				<input class="item__price" type="text" th:value="${item.price}"/><br>
+				<label>재고수량</label>
+				<input class="item__stockQuantity" type="text" th:value="${item.stockQuantity}">
+			</form>
+			<button class="update__btn">상품수정</button>
+			<button class="delete__btn" onclick>상품삭제</button>
+			</ul>
+		</div>
+		<button onclick="location.href='/admin/items/save'">상품등록</button>
+	</body>
+</html>

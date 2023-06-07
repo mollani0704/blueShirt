@@ -13,4 +13,6 @@ import com.project.blueshirt.model.ItemImgFile;
 public interface ItemRepository {
 	public int saveItem(Item item);
 	public int saveItemImgFiles(List<ItemImgFile> itemImgFile);
+	
+	public List<Item> getItemList();
 }

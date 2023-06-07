@@ -1,7 +1,5 @@
 'use strict';
 
-'use strict';
-
 const itemName = document.querySelector('.item_name');
 const image = document.querySelector('.image');
 const itemPrice = document.querySelector('.item_price');
@@ -12,7 +10,6 @@ const cancelBtn = document.querySelector('.cancel__btn');
 
 saveBtn.addEventListener('click', () => {
 	console.log('test');
-	
 	
 	let formData = new FormData(document.querySelector('form'));
 	formData.forEach((value, key) => {
@@ -36,6 +33,5 @@ saveBtn.addEventListener('click', () => {
 	.fail((error) => {
 		console.log(error);
 	})
-	
-	
 })
+

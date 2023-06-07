@@ -16,4 +16,9 @@ public class EstimatePageController {
 		return "/page/estimate/estimates_save";
 	}
 	
+	@GetMapping("/estimates/lists")
+	public String estimateList() {
+		return "/page/estimate/estimates_list";
+	}
+	
 }

@@ -11,12 +11,12 @@
 	<body>
 		<h1>상품목록</h1>
 		<div>
-			<ul>
-				<li>상품1</li>
-				<li>상품2</li>
-				<li>상품3</li>
+			<ul th:each="item : ${itemLists}">
+				<li th:text="${item.code}"></li>
+				<li th:text="${item.item_name}"></li>
+				<li th:text="${item.price}"></li>
+				<li th:text="${item.stockQuantity}"></li>
 			</ul>
 		</div>
-		<button onclick="location.href='/items/save'">상품등록</button>
 	</body>
 </html>
