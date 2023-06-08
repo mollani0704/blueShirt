@@ -14,8 +14,8 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.project.blueshirt.dto.SaveEsitmateDto;
-import com.project.blueshirt.model.Estimate;
-import com.project.blueshirt.model.EstimateImgFile;
+import com.project.blueshirt.model.estimate.Estimate;
+import com.project.blueshirt.model.estimate.EstimateImgFile;
 import com.project.blueshirt.repository.estimate.EstimateRepository;
 
 import lombok.RequiredArgsConstructor;

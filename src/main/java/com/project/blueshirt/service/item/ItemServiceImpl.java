@@ -14,10 +14,10 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.project.blueshirt.dto.SaveItemDto;
-import com.project.blueshirt.model.Estimate;
-import com.project.blueshirt.model.EstimateImgFile;
-import com.project.blueshirt.model.Item;
-import com.project.blueshirt.model.ItemImgFile;
+import com.project.blueshirt.model.estimate.Estimate;
+import com.project.blueshirt.model.estimate.EstimateImgFile;
+import com.project.blueshirt.model.item.Item;
+import com.project.blueshirt.model.item.ItemImgFile;
 import com.project.blueshirt.repository.estimate.EstimateRepository;
 import com.project.blueshirt.repository.item.ItemRepository;
 

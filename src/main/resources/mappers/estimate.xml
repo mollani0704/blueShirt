@@ -4,7 +4,7 @@
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.project.blueshirt.repository.estimate.EstimateRepository">
 	
-	<insert id="saveEstimate" parameterType="com.project.blueshirt.model.Estimate"
+	<insert id="saveEstimate" parameterType="com.project.blueshirt.model.estimate.Estimate"
 	useGeneratedKeys="true" keyProperty="code">
 	
 		insert into
@@ -21,7 +21,7 @@
 	
 	</insert>
 
-	<insert id="saveEstimateImgFiles" parameterType="com.project.blueshirt.model.EstimateImgFile">
+	<insert id="saveEstimateImgFiles" parameterType="com.project.blueshirt.model.estimate.EstimateImgFile">
 	
 		insert into
 			estimate_img

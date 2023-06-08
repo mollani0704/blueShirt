@@ -5,8 +5,8 @@ import java.util.List;
 import org.apache.ibatis.annotations.Mapper;
 import org.springframework.stereotype.Repository;
 
-import com.project.blueshirt.model.Item;
-import com.project.blueshirt.model.ItemImgFile;
+import com.project.blueshirt.model.item.Item;
+import com.project.blueshirt.model.item.ItemImgFile;
 
 @Repository
 @Mapper

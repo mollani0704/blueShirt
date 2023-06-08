@@ -6,8 +6,11 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
-import com.project.blueshirt.model.Item;
+import com.project.blueshirt.model.item.Item;
+import com.project.blueshirt.model.review.Review;
+import com.project.blueshirt.repository.review.ReviewRepository;
 import com.project.blueshirt.service.item.ItemService;
+import com.project.blueshirt.service.review.ReviewService;
 
 import lombok.RequiredArgsConstructor;
 
@@ -16,6 +19,7 @@ import lombok.RequiredArgsConstructor;
 public class AdminPageController {
 	
 	private final ItemService itemService;
+	private final ReviewService reviewService;
 	
 	@GetMapping("/admin")
 	public String adminPage() {
@@ -41,4 +45,25 @@ public class AdminPageController {
 	public String adminItemSave() {
 		return "/page/admin/item/admin_itemSave";
 	}
+	
+	@GetMapping("/admin/review")
+	public String adminReviewList(Model model) {
+		
+		try {
+			List<Review> reviewLists = reviewService.getReviews();
+			model.addAttribute("reviewLists", reviewLists);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			System.out.println("오류 발생");
+		}
+		
+		return "/page/admin/review/admin_review";
+	}
+	
+	@GetMapping("/admin/review/save")
+	public String adminReviewSave() {
+		return "/page/admin/review/admin_reviewSave";
+	}
+	
 }

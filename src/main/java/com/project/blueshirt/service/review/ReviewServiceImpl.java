@@ -15,8 +15,8 @@ import org.springframework.web.multipart.MultipartFile;
 
 
 import com.project.blueshirt.dto.SaveReviewDto;
-import com.project.blueshirt.model.Review;
-import com.project.blueshirt.model.ReviewImgFile;
+import com.project.blueshirt.model.review.Review;
+import com.project.blueshirt.model.review.ReviewImgFile;
 import com.project.blueshirt.repository.review.ReviewRepository;
 
 import lombok.RequiredArgsConstructor;
@@ -85,6 +85,18 @@ public class ReviewServiceImpl implements ReviewService{
 		}
 		
 		return result;
+	}
+
+	@Override
+	public List<Review> getReviews() throws Exception {
+		
+		List<Review> reviews = new ArrayList<>();
+		
+		reviewRepository.getReviewList().forEach(review -> {
+			reviews.add(review);
+		});
+		
+		return reviews;
 	}
 
 }

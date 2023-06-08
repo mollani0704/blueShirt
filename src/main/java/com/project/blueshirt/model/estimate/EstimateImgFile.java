@@ -1,4 +1,4 @@
-package com.project.blueshirt.model;
+package com.project.blueshirt.model.estimate;
 
 import lombok.Builder;
 import lombok.Getter;

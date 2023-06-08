@@ -1,12 +1,12 @@
-package com.project.blueshirt.model;
+package com.project.blueshirt.model.item;
 
 import lombok.Builder;
 import lombok.Data;
 
-@Builder
 @Data
-public class ReviewImgFile {
+@Builder
+public class ItemImgFile {
 	private int file_code;
-	private int review_code;
+	private int item_code;
 	private String file_name;
 }

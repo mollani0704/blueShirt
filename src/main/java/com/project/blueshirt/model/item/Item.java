@@ -1,4 +1,4 @@
-package com.project.blueshirt.model;
+package com.project.blueshirt.model.item;
 
 import lombok.Builder;
 import lombok.Data;

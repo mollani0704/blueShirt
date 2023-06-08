@@ -6,7 +6,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
-import com.project.blueshirt.model.Item;
+import com.project.blueshirt.model.item.Item;
 import com.project.blueshirt.service.item.ItemService;
 
 import lombok.RequiredArgsConstructor;

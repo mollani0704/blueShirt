@@ -1,4 +1,4 @@
-package com.project.blueshirt.model;
+package com.project.blueshirt.model.estimate;
 
 import java.time.LocalDateTime;
 import java.util.List;

@@ -11,9 +11,5 @@ public class ReviewPageController {
 		return "/page/review/review";
 	}
 	
-	@GetMapping("/review/save")
-	public String reivewSave() {
-		return "/page/review/review_save";
-	}
 	
 }

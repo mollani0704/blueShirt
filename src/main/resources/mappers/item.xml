@@ -4,7 +4,7 @@
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.project.blueshirt.repository.item.ItemRepository">
 
-	<select id="getItemList" resultType="com.project.blueshirt.model.Item">
+	<select id="getItemList" resultType="com.project.blueshirt.model.item.Item">
 		
 		select
 			id,
@@ -16,7 +16,7 @@
 	
 	</select>
 
-	<insert id="saveItem" parameterType="com.project.blueshirt.model.Item"
+	<insert id="saveItem" parameterType="com.project.blueshirt.model.item.Item"
 	useGeneratedKeys="true" keyProperty="code">
 	
 		insert into
@@ -30,7 +30,7 @@
 	
 	</insert>
 
-	<insert id="saveItemImgFiles" parameterType="com.project.blueshirt.model.ItemImgFile">
+	<insert id="saveItemImgFiles" parameterType="com.project.blueshirt.model.item.ItemImgFile">
 	
 		insert into
 			item_img

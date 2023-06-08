@@ -1,9 +1,9 @@
 package com.project.blueshirt.service.item;
 
-import com.project.blueshirt.model.Item;
 import org.springframework.stereotype.Service;
 
 import com.project.blueshirt.dto.SaveItemDto;
+import com.project.blueshirt.model.item.Item;
 
 import java.util.List;
 
