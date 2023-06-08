@@ -11,6 +11,11 @@ public class MemberPageController {
 		return "page/main";
 	}
 	
+	@GetMapping("/chungCompany")
+	public String introducePage() {
+		return "page/company";
+	}
+	
 	@GetMapping("/signup")
 	public String signUpPage() {
 		return "page/member/signup";
