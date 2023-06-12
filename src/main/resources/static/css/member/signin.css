@@ -1,14 +1,52 @@
+:root {
+	/* Color */
+	--color-white: #ffffff;
+    --color-light-white: #eeeeee;
+    --color-dark-white: #dbdbdb;
+    --color-blue: #73aace;
+    --color-light-blue: #47b5ff;
+    --color-dark-blue: #2471c8;
+    --color-dark-grey: #4d4d4d;
+    --color-grey: #616161;
+    --color-light-grey: #7c7979;
+    --color-black: #000000;
+	
+}
+
+
 .container {
     display: flex;
     flex-direction: column;
     justify-content: center;
 }
 
+.login__line {
+	width: 100%;
+	height: 45px;
+	background-color: var(--color-dark-blue);;
+}
+
 .login__header {
     width: 100%;
-    height: 300px;
-    background-color: white;
+    height: 230px;
+    background-color: var(--color-white);
     text-align: center;
+}
+
+.login__header h1 {
+	padding: 0 0 25px;
+	color: var(--color-black);
+	text-align: center;
+	line-height: 1;
+	font-size: 50px;
+	font-family: 'Nanum Gothic', sans-serif;
+}
+
+.login__header p {
+	color: #666;
+	text-align: center;
+	margin-top: 15px;
+	font-size: 20px;
 }
 
 .login__info {
@@ -16,23 +54,189 @@
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
+    
+    padding: 60px 0 100px;
+    border-top: #e5e5e5 1px solid;
+    margin: 0;
+    
     width: 100%;
-    height: 500px;
-    background-color: bisque;
+    height: 680px;
+    background-color: #f5f6fa;
+    
 }
 
 .login__form {
     display: flex;
-    width: 800px;
-    height: 400px;
-    background-color: white;
+    width: 100%;
+    height: 520px;
+    background-color: #fff;
+    
+    border: #ddd 1px solid;
+    border-radius: 3px;
+    overflow: hidden;
+    
+    max-width: 1026px;
+    
 }
 
 .login__left {
     flex: 1;
-    background-color: aqua;
+    
+    padding: 90px 20px 0;
+    outline: none;
 }
+
+.login__left > h1 {
+	font-size: 34px;
+	color: var(--color-black);
+	line-height: 1;
+	margin: 0 0 40px 0;
+	text-align: center;
+	font-weight: normal
+}
+
+login__left form {
+	margin: 0;
+	padding: 0;
+	border: 0;
+}
+
+#userId {
+	background: url("/static/img/icon_id.png") 0 50% no-repeat;
+	border: none;
+	border-bottom: #ccc 1px solid;
+	height: 36px;
+	line-height: 36px;
+	text-indent: 22px;
+	display: block;
+	width: 100%;
+}
+
+#password {
+	background: url("/static/img/icon_pw.png") 0 50% no-repeat;
+	border: none;
+	border-bottom: #ccc 1px solid;
+	height: 36px;
+	line-height: 36px;
+	text-indent: 22px;
+	display: block;
+	width: 100%;
+}
+
+.id__save--label {
+	padding: 14px 0;
+	text-align: right;
+	color: #959595;
+	display: block;
+	font-size: 14px;
+}
+
+#idSave {
+	border-radius: 0;
+	background: url("/static/img/element_check.png") no-repeat 50% 100%;
+	
+	display: inline-block;
+	width: 20px;
+	height: 20px;
+	border: none;
+	vertical-align: middle;
+	margin: 0 5px 0 0;
+	padding: 0;
+	cursor: pointer;
+	
+}
+
+.button {
+	width: 100%;
+	margin: 0 2px;
+	
+	line-height: 50px;
+	height: 50px;
+	font-size: 16px;
+	padding: 0 56px;
+	border-radius: 25px;
+	background-color: #2471c8;
+	color: #fff;
+	border: #2471c8 1px solid;
+}
+
 .login__right {
     flex: 0.6;
-    background-color: blue;
+    color: var(--color-black);
+    padding: 30px 40px 0;
+}
+
+.login__right .img__container {
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.login__right img {
+	width: 160px;
+	height: 160px;
+	
+	border-radius: 50%;
+	
+}
+
+.tx01 {
+	text-align: center;
+	font-size: 34px;
+	color: var(--color-black);
+	padding: 30px 0 0 0;
+	margin: 0 0 30px 0;
+}
+
+.login__right > dl {
+	position:relative;
+	padding: 15px 158px 15px 0;
+	box-sizing: border-box;
+	outline: none;
+}
+
+.login__right > dl dt {
+	color:var(--color-black);
+}
+
+.login__right > dl dd {
+	font-size: 12px;
+	color: var(--color-black);
+	margin-left: 0px;
+}
+
+.btnz {
+	position: absolute;
+	top: 50%;
+	right: 0;
+	margin-top: -18px;
+	width: 144px;
+}
+
+.btlogin {
+	display: block;
+	font-size: 14px;
+	color: var(--color-black);
+	text-align: center;
+	border: var(--color-black) 1px solid;
+	border-radius: 3px;
+	line-height: 36px;
+	
+	text-decoration: none;
+}
+
+
+
+.login__right > dl+dl {
+	border-top: #333 1px solid;
+	
+	position:relative;
+	padding: 15px 158px 15px 0;
+	box-sizing: border-box;
+	outline: none;
+}
+
+.login__right > dl+dl > .btnz .btlogin+.btlogin {
+	margin-top: 5px;
 }

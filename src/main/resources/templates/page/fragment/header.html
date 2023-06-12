@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+    <link rel="stylesheet" href="/static/css/style.css" />
+    <link rel="stylesheet" href="/static/css/index.css" />
+</head>
+<body>
+	 <header class="header">
+                <div class="logo" onclick="location.href='/'">
+                    <img src="/static/img/logo2.JPG" alt="logo" />
+                </div>
+                <ul class="menu">
+                    <li class="menu__item"><a href="/chungCompany">청남방 소개</a></li>
+                    <li class="menu__item"><a href="/items">청소용품</a></li>
+                    <li class="menu__item"><a href="/estimates">견적문의</a></li>
+                    <li class="menu__item"><a href="/review">작업후기</a></li>
+                </ul>
+                <ul class="login__menu">
+                    <li class="login" onclick="location.href='/signin'">로그인</li>
+                    <li class="signup" onclick="location.href='/signup'">회원가입</li>
+                </ul>
+      </header>
+</body>
+</html>

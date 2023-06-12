@@ -5,6 +5,8 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="stylesheet" href="/static/css/member/signin.css" />
+        <link rel="stylesheet" href="/static/css/style.css" />
+        <link rel="stylesheet" href="/static/css/index.css" />
         <script
             type="text/javascript"
             src="https://code.jquery.com/jquery-latest.min.js"
@@ -14,6 +16,22 @@
     </head>
     <body>
         <div class="container">
+         <header class="header">
+                <div class="logo" onclick="location.href='/'">
+                    <img src="/static/img/logo2.JPG" alt="logo" />
+                </div>
+                <ul class="menu">
+                    <li class="menu__item"><a href="/chungCompany">청남방 소개</a></li>
+                    <li class="menu__item"><a href="/items">청소용품</a></li>
+                    <li class="menu__item"><a href="/estimates">견적문의</a></li>
+                    <li class="menu__item"><a href="/review">작업후기</a></li>
+                </ul>
+                <ul class="login__menu">
+                    <li class="login" onclick="location.href='/signin'">로그인</li>
+                    <li class="signup" onclick="location.href='/signup'">회원가입</li>
+                </ul>
+            </header>
+            <div class=login__line></div>
             <div class="login__header">
                 <h1>로그인</h1>
                 <p>청남방 로그인 페이지입니다.</p>
@@ -21,25 +39,51 @@
             <div class="login__info">
                 <div class="login__form">
                     <div class="login__left">
+                    	<h1>로그인</h1>
                         <form method="post" action="/auth/loginProc">
-                            <label for="userId">닉네임</label>
+                            <!-- <label for="userId">닉네임</label> -->
                             <input
                                 id="userId"
                                 name="username"
                                 type="text"
-                                placeholder="닉네임을 입력해주세요"
-                            /><br />
-                            <label for="password">비밀번호</label>
+                                placeholder="아이디를 입력해주세요"
+                            /><br />                          
+                            <!-- <label for="password">비밀번호</label> -->
                             <input
                                 id="password"
                                 name="password"
                                 type="password"
                                 placeholder="패스워드를 입력해주세요"
                             /><br />
+                            <label class=id__save--label>아이디 저장
+                            	<input type="checkbox" name=idSave id="idSave">
+                            </label>
+                            
+                            <br/>
                             <button class="button">로그인</button>
                         </form>
                     </div>
-                    <div class="login__right">2</div>
+                    <div class="login__right">
+                    <div class="img__container">
+                    	<img alt="회원가입 로고" src="/static/img/logo.png">
+                    </div>
+                    	<p class="tx01">안녕하세요.</p>
+                    	<dl>
+                    		<dt>회원가입</dt>
+                    		<dd>가입 후 이벤트 참여 및 다양한 정보를 제공 받으실 수 있습니다.</dd>
+                    		<span class=btnz>
+                    			<a href="#" class="btlogin">회원가입</a>
+                    		</span>
+                    	</dl>
+                    	<dl>
+                    		<dt>아이디/비밀번호</dt>
+                    		<dd>아이디 또는 비밀번호 정보를 찾으실 수 있습니다.</dd>
+                    		<span class=btnz>
+                    			<a href="#" class="btlogin">아이디 찾기</a>
+                    			<a href="#" class="btlogin">비밀번호 찾기</a>
+                    		</span>
+                    	</dl>
+                    </div>
                 </div>
             </div>
         </div>
