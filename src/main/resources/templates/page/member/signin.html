@@ -16,21 +16,7 @@
     </head>
     <body>
         <div class="container">
-         <header class="header">
-                <div class="logo" onclick="location.href='/'">
-                    <img src="/static/img/logo2.JPG" alt="logo" />
-                </div>
-                <ul class="menu">
-                    <li class="menu__item"><a href="/chungCompany">청남방 소개</a></li>
-                    <li class="menu__item"><a href="/items">청소용품</a></li>
-                    <li class="menu__item"><a href="/estimates">견적문의</a></li>
-                    <li class="menu__item"><a href="/review">작업후기</a></li>
-                </ul>
-                <ul class="login__menu">
-                    <li class="login" onclick="location.href='/signin'">로그인</li>
-                    <li class="signup" onclick="location.href='/signup'">회원가입</li>
-                </ul>
-            </header>
+        <th:block th:replace="/page/fragment/header"></th:block>
             <div class=login__line></div>
             <div class="login__header">
                 <h1>로그인</h1>
