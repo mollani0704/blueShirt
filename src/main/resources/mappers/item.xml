@@ -15,6 +15,18 @@
 			item
 	
 	</select>
+	
+	<select id="getItem" parameterType="Integer" resultType="com.project.blueshirt.model.item.Item">
+		select
+			id,
+			item_name,
+			price,
+			stockQuantity
+		from
+			item
+		where
+			id = #{itemCode};
+	</select>
 
 	<insert id="saveItem" parameterType="com.project.blueshirt.model.item.Item"
 	useGeneratedKeys="true" keyProperty="code">

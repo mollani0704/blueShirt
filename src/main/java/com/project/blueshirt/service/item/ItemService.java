@@ -11,4 +11,5 @@ import java.util.List;
 public interface ItemService {
 	public boolean saveItem(SaveItemDto saveItemDto) throws Exception;
 	public List<Item> getItems() throws Exception;
+	public Item getItem(int itemCode) throws Exception;
 }

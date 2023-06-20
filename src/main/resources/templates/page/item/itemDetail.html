@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Insert title here</title>
+	</head>
+	<body>
+		<h1>여기는 아이템 detail 페이지 입니다.</h1>
+		<div th:with="itemData = ${itemData}">
+			<span th:text=${itemData.code}></span>	 		
+			<span th:text=${itemData.item_name}></span>			
+			<span th:text=${itemData.price}></span>			
+			<span th:text=${itemData.stockQuantity}></span>	 			
+		</div>
+	</body>
+</html>

@@ -100,4 +100,10 @@ public class ItemServiceImpl implements ItemService{
 		return items;
 	}
 
+	@Override
+	public Item getItem(int itemCode) throws Exception {
+				
+		return itemRepository.getItem(itemCode);
+	}
+
 }

@@ -5,18 +5,29 @@
 	    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 	    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	    <script type="text/javascript" src="https://code.jquery.com/jquery-latest.min.js"></script>
-	    
+	    <link rel="stylesheet" href="/static/css/style.css"/>
+	    <link rel="stylesheet" href="/static/css/item/item.css"/>
+	    <script src="/static/js/item/item.js" defer></script>
 	    <title>Document</title>
 	</head>
 	<body>
-		<h1>상품목록</h1>
-		<div>
-			<ul th:each="item : ${itemLists}">
-				<li th:text="${item.code}"></li>
-				<li th:text="${item.item_name}"></li>
-				<li th:text="${item.price}"></li>
-				<li th:text="${item.stockQuantity}"></li>
-			</ul>
+		<div class="item__container">
+			<h1>여기는 헤더</h1>
+			<div class="item__line"></div>
+			<h1>상품목록</h1>
+			<section class="item__section" >
+				<ul class="item__lists" >
+					<li class="item__list" th:each="item : ${itemLists}">
+						<img alt="" src="/static/img/logo.png">
+						<ul class="item__info">
+							<li class="item__code" th:value="${item.code}">
+							<li th:text="${item.item_name}">화장실 클리너</li>
+							<li th:text="${item.price}">13,000원</li>
+						</ul>
+					</li>
+				</ul>
+			</section>
+			
 		</div>
 	</body>
 </html>

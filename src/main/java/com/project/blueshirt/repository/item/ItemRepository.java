@@ -15,4 +15,5 @@ public interface ItemRepository {
 	public int saveItemImgFiles(List<ItemImgFile> itemImgFile);
 	
 	public List<Item> getItemList();
+	public Item getItem(int itemCode);
 }
