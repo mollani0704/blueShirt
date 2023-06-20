@@ -1,12 +1,119 @@
 <!DOCTYPE html>
-<html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
 	<head>
 		<meta charset="UTF-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 	    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	    <link rel="stylesheet" href="/static/css/style.css">
+	    <link rel="stylesheet" href="/static/css/company.css">
+	    <script src="https://kit.fontawesome.com/0f941af2a1.js" crossorigin="anonymous"></script>
 	<title>Insert title here</title>
 	</head>
-	<body>	
-		<h1>청남방 소개 페이지</h1>	
+	<body>
+		<div class="container">
+		<th:block th:replace="/page/fragment/header"></th:block>
+			<section class="section1">
+				<div class=sec1__container>
+					<div class="square">
+						<p>WHY?</p>
+						<p>청남방</p>
+					</div>
+					<div class="introduce">
+						<p>깔끔 정직 최선을 다합니다.</p>
+						<p>누구나 할 수 있는 일이지만 누구도 할 수 없는 결이 다른 청소를 보여드리겠습니다.</p>
+						<span>잘 정리되고, 관리받은 물건, 공간, 사람은 그 품격이나 가치가 다를 수밖에 없습니다. 
+						누군가에게는 하찮아 보이는, 주로 보이지 않는 곳에서 작업이 이루어지는 만큼 불성실하고, 
+						정직하지 못한 기존의 업태에 마음이 아팠습니다. 이름만 듣고도 믿고 맡길 수 있는 업체, 
+						진정한 퀄리티 있는 유지 보수로 품격을 올리기 위해 누구보다 노력하였습니다.</span>
+					</div>
+				</div>
+			</section>
+			<section class="section2">
+				<div class=sec2__container>
+					<div class="introduce__company--lists">
+						<div class=introduce__company--list>						
+							<i class="fa-solid fa-gem"></i>
+							<h3>기본을 지키는<br> 정직한 기업</h3>
+			                <p>
+			                    고객에게 합리적인 가격과 최상의 서비스를 제공하여 지속적인 신뢰를 이어갑니다.
+			                </p>
+						</div>
+						<div class=introduce__company--list>						
+							<i class="fa-solid fa-people-group"></i>
+							<h3>사람을 생각하는<br> 따뜻한 기업</h3>
+			                <p>
+								늘 고객의 입장에서 먼저 생각하고 고객의 입장을 배려하며 함께하려고 노력합니다.
+			                </p>
+						</div>
+						<div class=introduce__company--list>						
+							<i class="fa-solid fa-shield-heart"></i>
+							<h3>열정으로 <br>노력하는 기업</h3>
+			                <p>
+			                    우수한 품질의 청소를 제공하기 위해 항상 열정과 노력으로 보답하는 기업입니다.
+			                </p>
+						</div>
+					</div>
+				</div>
+			</section>
+			<section class="section3">
+				<div class="sec3__container">
+				  <h1>주요 제공 서비스</h1>
+	              <h3>전문 도구와 전문 기술이 함께하여 최상의 서비스로 보답하겠습니다.</h3>
+	              <div class="service__lists">
+	              	 <div class="service__list">
+	                 	<img src="/static/img/logo.png" alt="" />
+	                    <p>상가청소</p>
+	                    <span>청소 때문에 사람을 쓰기엔 비용이 부담되고, 
+	                    바쁜 직원들이 청소를 대신하기엔 벅찬 사무실 청소, 
+	                    그러나 많은 사람들이 업무를 보고 이용하는 사무실 청소는 
+	                    위생과도 직결되는 사항이며 청결한 근무환경은 작업능률을 
+	                    향상시킬 수 있습니다.</span>
+	                 </div>
+	                 <div class="service__list">
+	                 	<img src="/static/img/logo.png" alt="" />
+	                    <p>입주청소</p>
+	                    <span>건물 유지보수의 꽃은 청소입니다. 
+	                    전문교육과 선진 청소방법을 사용하여 고객님의 
+	                    자산을 지켜드립니다. 건물에 시공된 다양한 시공 
+	                    마감재, 건물의 상황, 고객의 필요에 맞는 맞춤 
+	                    서비스를 제공하여 건물의 가치를 높여드립니다.</span>
+	                 </div>
+	                 <div class="service__list">
+	                 	<img src="/static/img/logo.png" alt="" />
+	                    <p>유리창청소</p>
+	                    <span>청남방은 세계 모든 유리창 청소 시스템을 보유하고 
+	                    있습니다. 특수한 상황, 고난도 케이스의 현장도 최고의 도구와 
+	                    최고의 품질로 서비스를 제공합니다. 결코 후회하지 않는 만족스러운
+	                     결과물을 보여드리겠습니다</span>
+	                 </div>
+	                 <div class="service__list">
+	                 	<img src="/static/img/logo.png" alt="" />
+	                    <p>공장청소</p>
+	                    <span>청남방은 다른 청소업체와는 달리 
+	                    특별하고 전문적인 청소도구를 사용합니다. 특히 
+	                    오보트와 같은 특수 도구들은 작은 업체에서는 쓸 
+	                    수 없는 규모와 퀄리티를 자랑하기 때문에 저희만의
+	                     강점이라고 할 수 있습니다.</span>
+	                 </div>
+	              </div>
+				</div>
+			</section>
+			<section class="section4">
+				<div class="sec4__container">
+					<img alt="" src="/static/img/logo.png">
+					<div class="sec4__description">
+						<h1>청소는 이제 더이상 일반 노동이 아닙니다.</h1>
+						<p>전문 도구와 전문 기술이 함께하여 고객님들에게 최상의 서비스로 
+						보답하겠습니다. 청남방의 도구는 위의 도구들 이외에도 
+						다른 청소업체와는 달리 특별하고 전문적인 청소도구를 사용합니다. 
+						특히 오보트와 같은 특수 도구들은 작은 업체에서는 쓸 수 없는 규모와 
+						퀄리티를 자랑하기 때문에 저희만의 강점이라고 할 수 있습니다.</p>
+					</div>
+				</div>
+			</section>
+			
+			 <th:block th:replace="/page/fragment/footer"></th:block>
+			 
+		</div>	
 	</body>
 </html>
