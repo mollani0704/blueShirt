@@ -4,15 +4,38 @@
 		<meta charset="UTF-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="/static/css/style.css"/>
+		<link rel="stylesheet" href="/static/css/item/itemDetail.css">
 		<title>Insert title here</title>
 	</head>
 	<body>
-		<h1>여기는 아이템 detail 페이지 입니다.</h1>
-		<div th:with="itemData = ${itemData}">
-			<span th:text=${itemData.code}></span>	 		
-			<span th:text=${itemData.item_name}></span>			
-			<span th:text=${itemData.price}></span>			
-			<span th:text=${itemData.stockQuantity}></span>	 			
+		<div class="item__detail--container">
+			<th:block th:replace="/page/fragment/header"></th:block>
+			<div class="item__detail--line"></div>
+			<section class="detail__section">
+				<div class=detail__box>
+					<img src="/static/img/logo.png" alt="">
+					<div class="detail__info" th:with="itemData = ${itemData}">
+						<h1 th:text=${itemData.item_name}></h1>
+						<table class="info__table">
+							<tr>
+								<th>판매가</th>
+								<td th:text=${itemData.price+"원"}></td>
+							</tr>
+							<tr>
+								<th>남은수량</th>
+								<td th:text=${itemData.stockQuantity+"개"}></td>
+							</tr>
+							<tr>
+								<th>브랜드</th>
+								<td>청남방</td>
+							</tr>
+						</table>
+						<button class="buying__btn">구매하기</button>		
+					</div>
+				</div>
+			</section>
+			<th:block th:replace="/page/fragment/footer"></th:block>
 		</div>
 	</body>
 </html>

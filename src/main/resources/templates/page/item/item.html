@@ -12,7 +12,7 @@
 	</head>
 	<body>
 		<div class="item__container">
-			<h1>여기는 헤더</h1>
+			<th:block th:replace="/page/fragment/header"></th:block>
 			<div class="item__line"></div>
 			<h1>상품목록</h1>
 			<section class="item__section" >
@@ -20,14 +20,14 @@
 					<li class="item__list" th:each="item : ${itemLists}">
 						<img alt="" src="/static/img/logo.png">
 						<ul class="item__info">
-							<li class="item__code" th:value="${item.code}">
-							<li th:text="${item.item_name}">화장실 클리너</li>
-							<li th:text="${item.price}">13,000원</li>
+							<li class="item__code" th:value=${item.code}>
+							<li class="item__name" th:text=${item.item_name}>화장실 클리너</li>
+							<li class="item__price" th:text=${item.price+"원"}>13,000원</li>
 						</ul>
 					</li>
 				</ul>
 			</section>
-			
+			<th:block th:replace="/page/fragment/footer"></th:block>
 		</div>
 	</body>
 </html>
