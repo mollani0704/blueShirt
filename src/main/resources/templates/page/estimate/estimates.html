@@ -4,19 +4,44 @@
 		<meta charset="UTF-8">
 	    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 	    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	    <script type="text/javascript" src="https://code.jquery.com/jquery-latest.min.js"></script>
+	    <link rel="stylesheet" href="/static/css/style.css">
+	    <link rel="stylesheet" href="/static/css/estimate/estimate.css">
 	    
+	    <script type="text/javascript" src="https://code.jquery.com/jquery-latest.min.js"></script>
+	    <script src="/static/js/estimate/estimate.js" defer></script>
 	    <title>Document</title>
 	</head>
 	<body>
-		<h1>견적 체크 리스트</h1>
-		<div>
-			<ul>
-				<li>견적1</li>
-				<li>견적2</li>
-				<li>견적3</li>
-			</ul>
+		<div class="estimate__container">
+			<th:block th:replace="/page/fragment/header"></th:block>
+			<div class="estimate__line"></div>
+			<div class=estimate__header>	
+				<h1>견적 문의</h1>
+				<h2>정확한 상담을 위해 아래의 정보를 입력해 주세요.</h2>
+			</div>
+			<section class="section1">
+				<form enctype="multipart/form-data">
+					<div class="info">
+						<label>제목</label>
+						<input class="title" name="title" type="text" placeholder="제목을 적어주세요"><br>
+					</div>
+					<div class="info">
+						<label>사진</label>
+						<input class="image" name="imageFiles" type="file" placeholder="첨부파일" multiple accept=".jpg, .jpeg, .png, .gif"><br>
+					</div>
+					<div class="info">
+						<label>내용</label>
+						<textarea class="content" name="content" rows="15" cols="30"></textarea>
+					</div>
+					<div class="info">
+						<label>비밀번호</label>
+						<input class="password" type="password" name="password" placeholder="비밀번호 숫자 4자리를 입력해주세요"><br>
+					</div>
+				</form>
+				<button class="save__btn">저장</button>
+				<button class="cancel__btn">취소</button>	
+			</section>
+			<th:block th:replace="/page/fragment/footer"></th:block>
 		</div>
-		<button onclick="location.href='/estimates/save'">글쓰기</button>
 	</body>
 </html>
