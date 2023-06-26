@@ -16,4 +16,5 @@ public interface ReviewRepository {
 	public int saveReviewImgFiles(List<ReviewImgFile> reviewImgFiles);
 	
 	public List<Review> getReviewList();
+	public Review getReview(int reviewCode);
 }

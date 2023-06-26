@@ -1,0 +1,58 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700;800&family=Noto+Sans+KR:wght@400;700&display=swap');
+
+:root {
+	/* Color */
+	--color-white: #ffffff;
+    --color-light-white: #eeeeee;
+    --color-dark-white: #dbdbdb;
+    --color-blue: #73aace;
+    --color-light-blue: #47b5ff;
+    --color-dark-blue: #2471c8;
+    --color-dark-grey: #4d4d4d;
+    --color-grey: #616161;
+    --color-light-grey: #7c7979;
+    --color-black: #000000;
+}
+
+.reviewDetail__container {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.reviewDetail__line {
+	width: 100%;
+	height: 45px;
+	background-color: var(--color-dark-blue);
+}
+
+.section1 {
+	width: 100%;
+	height: 80%;
+	
+	background-color: var(--color-light-white);
+	
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.sec1__container {
+	height: 100%;
+	width: 100%;
+	
+	max-width: 1000px;
+	
+}
+
+.sec1__container > h1 {
+	text-align: center;
+}
+
+.detail__content {
+	padding: 30px;
+	text-align: center;
+}

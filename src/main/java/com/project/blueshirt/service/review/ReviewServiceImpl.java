@@ -99,4 +99,10 @@ public class ReviewServiceImpl implements ReviewService{
 		return reviews;
 	}
 
+	@Override
+	public Review getReview(int reviewCode) throws Exception {
+		
+		return reviewRepository.getReview(reviewCode);
+	}
+
 }

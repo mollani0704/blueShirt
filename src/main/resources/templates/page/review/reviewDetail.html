@@ -6,27 +6,30 @@
 	    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	    <script type="text/javascript" src="https://code.jquery.com/jquery-latest.min.js"></script>
 	    <link rel="stylesheet" href="/static/css/style.css" />
-	    <link rel="stylesheet" href="/static/css/review/review.css"/>
+	    <link rel="stylesheet" href="/static/css/review/reviewDetail.css"/>
+	    <script src="https://kit.fontawesome.com/0f941af2a1.js" crossorigin="anonymous"></script>
 	    <script src="/static/js/review/review.js" defer></script>
 	    <title>Document</title>
 	</head>
 	<body>
-		<div class="review__container">
+		<div class="reviewDetail__container">	
 			<th:block th:replace="/page/fragment/header"></th:block>
-			<div class="review__line"></div>
-			<div class=review__header>
-				<h1>작업 후기</h1>
-				<h2>청남방의 깔끔 정직한 작업 후기들입니다.</h2>			
-			</div>
+			<div class="reviewDetail__line"></div>
 			<section class="section1">
-				<div class=sec1__container>
-					<div class=review__lists >
-						<div class="review__list" th:each="reviews : ${reviews}">
-							<img src="/static/img/logo.png"/>
-							<p class="review__code" th:text=${reviews.code}></p>
-							<p th:text=${reviews.title}>부산 바닥청소, 부산 데코타일 청소</p>
-							<span th:text=${reviews.create_date}>2023-06-15</span>
+				<div class="sec1__container">
+					<h1 th:text=${review.title}>제목</h1>
+					<div class=detail__info>
+						<div class="detail__date">						
+							<i class="fa-solid fa-calendar-days"></i>
+							<span th:text=${review.create_date}>2023-06-26</span><br>
 						</div>
+						<div class='detail__writer'>
+							<i class="fa-solid fa-user"></i>	
+							<span>Admin</span>
+						</div>
+					</div>
+					<div class="detail__content" th:text=${review.content}>
+						
 					</div>
 				</div>
 			</section>

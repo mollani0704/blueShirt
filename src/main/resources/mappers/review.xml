@@ -16,6 +16,20 @@
 			review
 	</select>
 	
+	<select id="getReview" parameterType="Integer" resultType="com.project.blueshirt.model.review.Review">
+		select
+			code,
+			review_title,
+			category,
+			review_content,
+			create_date,
+			update_date
+		from
+			review
+		where
+			code = #{reviewCdoe};
+	</select>
+	
 	<insert id="saveReview" parameterType="com.project.blueshirt.model.review.Review"
 	useGeneratedKeys="true" keyProperty="code">
 	
