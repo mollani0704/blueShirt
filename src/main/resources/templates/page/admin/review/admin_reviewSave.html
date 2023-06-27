@@ -4,21 +4,53 @@
 		<meta charset="UTF-8">
 	    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 	    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	    
+	    <link rel="stylesheet" href="/static/css/review/reviewSave.css"/>
+	    <link rel="stylesheet" href="/static/css/style.css"/>
+	    
 	    <script type="text/javascript" src="https://code.jquery.com/jquery-latest.min.js"></script>
 	    <script src="/static/js/review/admin_review.js" defer></script>
+	    
+	    <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.css" rel="stylesheet">
+		<script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.js"></script>
 	    <title>Document</title>
 	</head>
 	<body>
-		<h1>작업후기 등록</h1>
-		<form enctype="multipart/form-data">
-			<label>작업이름</label>
-			<input class="title" name="title" type="text" placeholder="작업명을 적어주세요"><br>
-			<label>사진</label>
-			<input class="image" name="reviewImageFiles" type="file" placeholder="첨부파일" multiple accept=".jpg, .jpeg, .png, .gif"><br>
-			<label>작업 내용</label>
-			<textarea class="content" name="content" rows="15" cols="30" placeholder="작업 후기를 적어주세요"></textarea><br>
-		</form>
-		<button class="save__btn">저장</button>
-		<button class="cancel__btn">취소</button>		
+		<div class="reviewSave__container">
+			<h1>작업후기 등록</h1>
+			<form enctype="multipart/form-data">
+				<div class="info">				
+					<label>작업이름</label>
+					<input class="title" name="title" type="text" placeholder="작업명을 적어주세요"><br>
+				</div>
+				<div class="info">				
+					<label>사진</label>
+					<input class="image" name="reviewImageFiles" type="file" placeholder="첨부파일" multiple accept=".jpg, .jpeg, .png, .gif"><br>
+				</div>
+				<div class="info">				
+					<label>작업 내용</label>
+					<textarea class="content summernote" name="content" rows="500" cols="500" placeholder="작업 후기를 적어주세요"></textarea>
+				</div>
+			</form>
+			<button class="save__btn">저장</button>
+			<button class="cancel__btn">취소</button>
+		</div>		
 	</body>
+	<script>
+      $('.summernote').summernote({
+        placeholder: '작업후기를 작성해 주세요',
+        background: '#000000',
+        tabsize: 2,
+        height: 200,
+        toolbar: [
+          ['style', ['style']],
+          ['font', ['bold', 'underline', 'clear']],
+          ['color', ['color']],
+          ['para', ['ul', 'ol', 'paragraph']],
+          ['table', ['table']],
+          ['insert', ['link', 'picture', 'video']],
+          ['view', ['fullscreen', 'codeview', 'help']]
+        ]
+      });
+    </script>
 </html>

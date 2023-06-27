@@ -1,0 +1,63 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700;800&family=Noto+Sans+KR:wght@400;700&display=swap');
+
+:root {
+	/* Color */
+	--color-white: #ffffff;
+    --color-light-white: #eeeeee;
+    --color-dark-white: #dbdbdb;
+    --color-blue: #73aace;
+    --color-light-blue: #47b5ff;
+    --color-dark-blue: #2471c8;
+    --color-dark-grey: #4d4d4d;
+    --color-grey: #616161;
+    --color-light-grey: #7c7979;
+    --color-black: #000000;
+}
+
+body {
+	width: 100vw;
+	height: 100hw;
+}
+
+.estimateList__container {
+	width: 100%;
+	height: 800px;
+	background-color: var(color-light-white);
+	
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+}
+
+.estimateList {
+	border: 1px #a39485 solid;
+	font-size: 0.9em;
+	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25);
+	width: 100%;
+	max-width: 800px;
+	border-collapse: collapse;
+	border-radius: 5px;
+	overflow: hidden;
+}
+
+thead {
+	font-weight: bold;
+	color: #fff;
+	background-color: var(--color-dark-blue);
+}
+
+th {
+	text-align: center;
+}
+
+td, th {
+	padding: 1em 0.5em;
+	vertical-align: middle
+}
+
+td {
+	border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+	background-color: #fff;
+	text-align: center;
+}

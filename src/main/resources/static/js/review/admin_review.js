@@ -9,13 +9,12 @@ const cancelBtn = document.querySelector('.cancel__btn');
 
 saveBtn.addEventListener('click', () => {
 	console.log('test');
-	
-	
+	console.log(content.value)
 	
 	let formData = new FormData(document.querySelector('form'));
 	formData.forEach((value, key) => {
 		console.log("key : " + key);
-		console.log("value : " + value);
+		console.log("value : " + value.value);
 	});
 	
 	$.ajax({

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<meta charset="UTF-8">
+	    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	    <script type="text/javascript" src="https://code.jquery.com/jquery-latest.min.js"></script>
+	    <link rel="stylesheet" href="/static/css/style.css">
+	    <link rel="stylesheet" href="/static/css/estimate/estimateList.css"/>
+	    <title>Document</title>
+	</head>
+	<body>
+		<div class="estimateList__container">
+			<h1>견적 목록</h1>
+			
+			<table class="estimateList">
+		    	<thead>
+		    		<tr>
+		    			<th>code</th>
+		    			<th>제목</th>
+		    			<th>category</th>
+		    			<th>내용</th>
+		    			<th>작성일</th>
+		    		</tr>
+		    	</thead>
+		    	<tbody>
+		    		<tr th:each="estimate : ${estimateList}">
+		    			<td th:text=${estimate.code}>test</td>
+		    			<td th:text=${estimate.title}>test</td>
+		    			<td th:text=${estimate.category}>test</td>
+		    			<td th:text=${estimate.content}>test</td>
+		    			<td th:text=${estimate.create_date}>test</td>
+		    		</tr>
+		    	</tbody>
+    		</table>
+		</div>
+	</body>
+</html>

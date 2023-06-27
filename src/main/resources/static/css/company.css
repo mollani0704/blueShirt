@@ -24,6 +24,12 @@
 	flex-direction: column;
 }
 
+.company__line {
+	width: 100%;
+	height: 45px;
+	background-color: var(--color-dark-blue);
+}
+
 /*section1*/
 .section1 {
 	width:100%;

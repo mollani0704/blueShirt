@@ -87,4 +87,16 @@ public class EstimateServiceImpl implements EstimateService{
 		return result;
 	}
 
+	@Override
+	public List<Estimate> getEstimates() throws Exception {
+		
+		List<Estimate> estimates = new ArrayList<>();
+		
+		estimateRepository.getEstimateList().forEach(estimate -> {
+			estimates.add(estimate);
+		});
+		
+		return estimates;
+	}
+
 }

@@ -5,15 +5,19 @@
 	    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 	    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	    <script type="text/javascript" src="https://code.jquery.com/jquery-latest.min.js"></script>
-	    
+	    <link rel="stylesheet" href="/static/css/style.css">
+	    <link rel="stylesheet" href="/static/css/admin/admin.css">
 	    <title>Document</title>
 	</head>
 	<body>
-		<h1>Admin Page</h1>
-		<div>
-			<button onclick="location.href='/review/save'">작업후기</button>
-			<button onclick="location.href='/items/save'">상품추가</button>
-			<button onclick="location.href='/estimates/lists'">견적목록</button>
+		<div class="admin__container">
+			<h1>Admin Page</h1>
+			<div class="admin__button">
+				<button onclick="location.href='/'">홈으로</button>
+				<button onclick="location.href='/admin/review/save'">작업후기</button>
+				<button onclick="location.href='/admin/items/save'">상품추가</button>
+				<button onclick="location.href='/admin/estimates/lists'">견적목록</button>
+			</div>
 		</div>
 	</body>
 </html>

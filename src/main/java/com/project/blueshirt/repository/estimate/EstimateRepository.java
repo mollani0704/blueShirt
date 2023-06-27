@@ -15,4 +15,5 @@ public interface EstimateRepository {
 	public int saveEstimate(Estimate estimate);
 	public int saveEstimateImgFiles(List<EstimateImgFile> estimateImgFiles);
 	
+	public List<Estimate> getEstimateList();
 }
