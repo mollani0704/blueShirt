@@ -6,26 +6,33 @@
 	
 	<select id="getReviewList" resultType="com.project.blueshirt.model.review.Review">
 		select
-			code,
-			review_title,
-			category,
-			review_content,
-			create_date,
-			update_date
+			r.code,
+			r.review_title,
+			r.category,
+			r.review_content,
+			r.create_date,
+			r.update_date,
+			ri.file_code,
+			ri.file_name
 		from
-			review
+			review r
+			left outer join review_img ri on(r.code = ri.review_code)
+		limit 8;
 	</select>
 	
 	<select id="getReview" parameterType="Integer" resultType="com.project.blueshirt.model.review.Review">
 		select
-			code,
-			review_title,
-			category,
-			review_content,
-			create_date,
-			update_date
+			r.code,
+			r.review_title,
+			r.category,
+			r.review_content,
+			r.create_date,
+			r.update_date,
+			ri.file_code,
+			ri.file_name
 		from
-			review
+			review r
+			left outer join review_img ri on(r.code = ri.review_code)
 		where
 			code = #{reviewCdoe};
 	</select>

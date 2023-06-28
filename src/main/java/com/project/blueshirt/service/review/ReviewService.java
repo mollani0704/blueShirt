@@ -10,6 +10,9 @@ import com.project.blueshirt.model.review.Review;
 @Service
 public interface ReviewService {
 	public Boolean addReview(SaveReviewDto saveReviewDto) throws Exception;
+	
 	public List<Review> getReviews() throws Exception;
+	
 	public Review getReview(int reviewCode) throws Exception;
+	
 }

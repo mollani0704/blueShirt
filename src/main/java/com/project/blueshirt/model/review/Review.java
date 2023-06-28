@@ -1,6 +1,8 @@
 package com.project.blueshirt.model.review;
 
 import java.time.LocalDateTime;
+import java.util.List;
+import java.util.Map;
 
 import lombok.Builder;
 import lombok.Data;
@@ -14,4 +16,6 @@ public class Review {
 	private String content;
 	private LocalDateTime create_date;
 	private LocalDateTime update_date;
+	private int file_code;
+	private String file_name;
 }

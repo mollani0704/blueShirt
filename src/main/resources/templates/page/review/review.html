@@ -25,7 +25,7 @@
 							<img src="/static/img/logo.png"/>
 							<p class="review__code" th:text=${reviews.code}></p>
 							<p th:text=${reviews.title}>부산 바닥청소, 부산 데코타일 청소</p>
-							<span th:text=${reviews.create_date}>2023-06-15</span>
+							<span th:text="${#temporals.format(reviews.create_date, 'yyyy-MM-dd')}">2023-06-15</span>
 						</div>
 					</div>
 				</div>
