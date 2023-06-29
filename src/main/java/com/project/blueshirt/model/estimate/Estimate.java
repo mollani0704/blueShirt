@@ -12,9 +12,11 @@ import lombok.Getter;
 @Builder
 public class Estimate {
 	private int code;
-	private String title;
+	private String name;
+	private String phoneNumber;
 	private String category;
+	private String location;
+	private String size;
 	private String content;
-	private String password;
 	private LocalDateTime create_date;
 }

@@ -22,21 +22,71 @@
 			<section class="section1">
 				<form enctype="multipart/form-data">
 					<div class="info">
-						<label>제목</label>
-						<input class="title" name="title" type="text" placeholder="제목을 적어주세요"><br>
+						<div class="info__title">						
+							<label>이름</label>
+						</div>
+						<div class="info__content">						
+							<input class="name" name="name" type="text" placeholder="이름을 입력해주세요"><br>
+						</div>
 					</div>
 					<div class="info">
-						<label>사진</label>
-						<input class="image" name="imageFiles" type="file" placeholder="첨부파일" multiple accept=".jpg, .jpeg, .png, .gif"><br>
+						<div class="info__title">						
+							<label>연락처</label>
+						</div>
+						<div class="info__content">						
+							<input class="name" name="phoneNumber" type="text" placeholder="연락처를 입력해주세요"><br>
+						</div>
 					</div>
 					<div class="info">
-						<label>내용</label>
-						<textarea class="content" name="content" rows="15" cols="30"></textarea>
+						<div class="info__title">					
+							<label>청소유형</label>
+						</div>
+						<div class="info__content">	
+							<select class="cleaning__option" name="category">
+								<option value=""> 청소유형을 선택해주세요</option>
+								<option value="입주청소"> 이사 / 입주청소 </option>
+								<option value="상가청소"> 상가청소</option>
+								<option value="바닥청소"> 바닥청소</option>
+								<option value="유리창청소"> 유리창청소</option>
+								<option value="공장청소"> 공장청소</option>
+								<option value="기타"> 기타</option>
+							</select>
+						</div>
 					</div>
 					<div class="info">
-						<label>비밀번호</label>
-						<input class="password" type="password" name="password" placeholder="비밀번호 숫자 4자리를 입력해주세요"><br>
+						<div class="info__title">						
+							<label>지역</label>
+						</div>
+						<div class="info__content">						
+							<input class="location" name="location" type="text" placeholder="지역을 입력해주세요"><br>
+						</div>
 					</div>
+					<div class="info">
+						<div class="info__title">					
+							<label>평수</label>
+						</div>
+						<div class="info__content">						
+							<input class="size" name="size" type="text" placeholder="평수를 입력해주세요"><br>
+						</div>
+						</div>
+					<div class="info">
+						<div class="info__title">					
+							<label>사진첨부</label>
+						</div>
+						<div class="info__content">						
+							<input class="image" name="imageFiles" type="file" placeholder="첨부파일" multiple accept=".jpg, .jpeg, .png, .gif"><br>
+							<input class="image" name="imageFiles" type="file" placeholder="첨부파일" multiple accept=".jpg, .jpeg, .png, .gif"><br>
+							<input class="image" name="imageFiles" type="file" placeholder="첨부파일" multiple accept=".jpg, .jpeg, .png, .gif"><br>
+						</div>
+						</div>
+					<div class="info">
+						<div class="info__title">					
+							<label>요청사항</label>
+						</div>
+						<div class="info__content">
+							<textarea class="content" name="content" rows="20" cols="65"></textarea>
+						</div>
+						</div>
 				</form>
 				<button class="save__btn">저장</button>
 				<button class="cancel__btn">취소</button>	

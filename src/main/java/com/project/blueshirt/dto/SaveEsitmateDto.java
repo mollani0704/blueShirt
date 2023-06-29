@@ -10,8 +10,11 @@ import lombok.Data;
 @Data
 @Builder
 public class SaveEsitmateDto {
-	private String title;
+	private String name;
+	private String phoneNumber;
+	private String category;
+	private String location;
+	private String size;
 	private List<MultipartFile> imageFiles;
 	private String content;
-	private String password;
 }

@@ -1,16 +1,10 @@
 'use strict';
 
-const title = document.querySelector('.title');
-const image = document.querySelector('.image');
-const content = document.querySelector('.content');
-const password = document.querySelector('.password');
-
 const saveBtn = document.querySelector('.save__btn');
 const cancelBtn = document.querySelector('.cancel__btn');
 
 saveBtn.addEventListener('click', () => {
 	console.log('test');
-	
 	
 	let formData = new FormData(document.querySelector('form'));
 	formData.forEach((value, key) => {
@@ -30,10 +24,14 @@ saveBtn.addEventListener('click', () => {
 	})
 	.done((response) => {
 		console.log(response);
+		alert("견적 요청이 완료되었습니다.")
+		location.href = "/"
 	})
 	.fail((error) => {
 		console.log(error);
 	})
+})
 
-	
+cancelBtn.addEventListener('click', () => {
+	location.href = "/";
 })

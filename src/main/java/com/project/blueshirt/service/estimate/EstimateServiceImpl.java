@@ -40,10 +40,12 @@ public class EstimateServiceImpl implements EstimateService{
 		boolean result = false;
 		
 		estimate = Estimate.builder()
-					.title(saveEsitmateDto.getTitle())
-					.category(null)
+					.name(saveEsitmateDto.getName())
+					.phoneNumber(saveEsitmateDto.getPhoneNumber())
+					.category(saveEsitmateDto.getCategory())
+					.location(saveEsitmateDto.getLocation())
+					.size(saveEsitmateDto.getSize())
 					.content(saveEsitmateDto.getContent())
-					.password(saveEsitmateDto.getPassword())
 					.build();
 		
 		result = estimateRepository.saveEstimate(estimate) > 0;

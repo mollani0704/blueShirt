@@ -8,10 +8,12 @@
 		
 		select
 			code,
-			title,
+			name,
+			phoneNumber,
 			category,
+			location,
+			size,
 			content,
-			password,
 			createDate
 		from
 			estimate
@@ -25,10 +27,12 @@
 			estimate
 		values(
 			0, 
-			#{title},
+			#{name},
+			#{phoneNumber},
 			#{category},
+			#{location},
+			#{size},
 			#{content},
-			#{password},
 			now(),
 			now()
 		)

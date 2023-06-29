@@ -31,11 +31,13 @@ body {
 }
 
 .estimateList {
+	position: relative;
+	
 	border: 1px #a39485 solid;
 	font-size: 0.9em;
 	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25);
 	width: 100%;
-	max-width: 800px;
+	max-width: 1300px;
 	border-collapse: collapse;
 	border-radius: 5px;
 	overflow: hidden;
@@ -60,4 +62,23 @@ td {
 	border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 	background-color: #fff;
 	text-align: center;
+}
+
+.adminHome__btn {
+	position: absolute;
+	top: 30px;
+	right: 100px;
+	
+	width: 120px;
+	height: 30px;
+	line-height: 30px;
+	font-size: 15px;
+	color: var(--color-white);
+	font-weight: 600;
+	font-family: 'Noto Sans KR', sans-serif;
+	background-color: var(--color-black);
+	border-radius: 5px;
+	border: none;
+	cursor: pointer;
+	
 }
