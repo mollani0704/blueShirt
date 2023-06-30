@@ -13,7 +13,7 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
-
+import com.project.blueshirt.dto.ModifyReviewDto;
 import com.project.blueshirt.dto.SaveReviewDto;
 import com.project.blueshirt.model.review.Review;
 import com.project.blueshirt.model.review.ReviewImgFile;
@@ -103,6 +103,60 @@ public class ReviewServiceImpl implements ReviewService{
 	public Review getReview(int reviewCode) throws Exception {
 		
 		return reviewRepository.getReview(reviewCode);
+	}
+
+	@Override
+	public Boolean modifyReview(int reviewCode, ModifyReviewDto modifyReviewDto) throws Exception {
+		
+Predicate<String> predicate = (filename) -> !filename.isBlank();
+		
+		Review review = null;
+		boolean result = false;
+		
+		review = Review.builder()
+					.title(modifyReviewDto.getTitle())
+					.content(modifyReviewDto.getContent())
+					.build();
+		
+		result = reviewRepository.modifyReview(reviewCode, review) > 0;
+		
+		
+		if(predicate.test(modifyReviewDto.getReviewImageFiles().get(0).getOriginalFilename())) {
+			List<ReviewImgFile> reviewImgFiles = new ArrayList<ReviewImgFile>();
+			
+			for(MultipartFile file : modifyReviewDto.getReviewImageFiles()) {
+				String originalFileName = file.getOriginalFilename();
+				String tempFileName = UUID.randomUUID().toString().replaceAll("-", "") + "_" + originalFileName;
+				
+				log.info(tempFileName);
+				
+				Path uploadPath = Paths.get(filePath, "review/" + tempFileName);
+				
+				File f = new File(filePath + "review");
+				
+				if(!f.exists() ) {
+					f.mkdirs();
+				}
+				
+				try {					
+					Files.write(uploadPath, file.getBytes());
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+				
+			
+				reviewImgFiles.add(ReviewImgFile.builder()
+						.review_code(review.getCode())
+						.file_name(tempFileName)
+						.build());
+				
+			}
+			
+			reviewRepository.saveReviewImgFiles(reviewImgFiles);
+			
+		}
+		
+		return result;
 	}
 
 }

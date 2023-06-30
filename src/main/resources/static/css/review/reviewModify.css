@@ -82,7 +82,7 @@ body {
 	border-radius: 10px;
 }
 
-.save__btn {
+.modify__btn {
 	width: 800px;
 	height: 80px;
 	line-height: 80px;
@@ -94,6 +94,22 @@ body {
 	border-radius: 20px;
 	border: none;
 	cursor: pointer
+}
+
+.delete__btn {
+	width: 800px;
+	height: 80px;
+	line-height: 80px;
+	font-size: 24px;
+	color: var(--color-white);
+	font-weight: 600;
+	font-family: 'Noto Sans KR', sans-serif;
+	background-color: #FF6666;
+	border-radius: 20px;
+	border: none;
+	cursor: pointer;
+	
+	margin-top: 10px;
 }
 
 .cancel__btn {

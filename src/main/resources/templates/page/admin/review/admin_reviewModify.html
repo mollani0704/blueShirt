@@ -5,11 +5,11 @@
 	    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 	    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	    
-	    <link rel="stylesheet" href="/static/css/review/reviewSave.css"/>
+	    <link rel="stylesheet" href="/static/css/review/reviewModify.css"/>
 	    <link rel="stylesheet" href="/static/css/style.css"/>
 	    
 	    <script type="text/javascript" src="https://code.jquery.com/jquery-latest.min.js"></script>
-	    <script src="/static/js/review/admin_review.js" defer></script>
+	    <script src="/static/js/review/admin_reviewModify.js" defer></script>
 	    
 	    <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.css" rel="stylesheet">
 		<script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.js"></script>
@@ -17,14 +17,15 @@
 	</head>
 	<body>
 		<div class="reviewSave__container">
-			<h1>작업후기 등록</h1>
+			<h1>작업후기 수정</h1>
+			<input class="review__code" th:value=${review.code} type="hidden">
 			<form enctype="multipart/form-data">
 				<div class="info">	
 					<div class="info__title">					
 						<label>작업이름</label>
 					</div>
 					<div class="info__content">				
-						<input class="title" name="title" type="text" placeholder="작업명을 적어주세요"><br>
+						<input th:field=${review.title} class="title" name="title" type="text" placeholder="작업명을 적어주세요"><br>
 					</div>
 				</div>
 				<div class="info">
@@ -40,12 +41,13 @@
 						<label>작업 내용</label>
 					</div>
 					<div class="info__content">					
-						<textarea class="content summernote" name="content" rows="500" cols="500" placeholder="작업 후기를 적어주세요"></textarea>
+						<textarea th:utext=${review.content} class="content summernote" name="content" rows="500" cols="500" placeholder="작업 후기를 적어주세요"></textarea>
 					</div>
 				</div>
 			</form>
-			<button class="save__btn">저장</button>
-			<button class="cancel__btn" onclick="location.href='/admin'">취소</button>
+			<button class="modify__btn">수정</button>
+			<button class="delete__btn">삭제</button>
+			<button class="cancel__btn" onclick="location.href='/admin/reviews'">취소</button>
 		</div>		
 	</body>
 	<script>

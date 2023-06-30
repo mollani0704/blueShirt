@@ -1,15 +1,15 @@
 'use strict';
 
-const title = document.querySelector('.title');
-const image = document.querySelector('.image');
-const content = document.querySelector('.content');
+const reviewCode = document.querySelector('.review__code').value;
 
-const saveBtn = document.querySelector('.save__btn');
+
+const modifyBtn = document.querySelector('.modify__btn');
+const deleteBtn = document.querySelector('.delete__btn');
 const cancelBtn = document.querySelector('.cancel__btn');
 
-saveBtn.addEventListener('click', () => {
+modifyBtn.addEventListener('click', () => {
 	console.log('test');
-	console.log(content.value)
+	console.log(reviewCode);
 	
 	let formData = new FormData(document.querySelector('form'));
 	formData.forEach((value, key) => {
@@ -19,8 +19,8 @@ saveBtn.addEventListener('click', () => {
 	
 	$.ajax({
 		async: false,
-		type: "POST",
-		url: "/api/review/save",
+		type: "PUT",
+		url: `/api/review/modify/${reviewCode}`,
 		enctype: "multipart/form-data",
 		contentType: false,
 		processData: false,
@@ -29,8 +29,8 @@ saveBtn.addEventListener('click', () => {
 	})
 	.done((response) => {
 		console.log(response);
-		alert("작업 후기가 등록되었습니다.");
-		location.href = "/admin";
+		alert("작업 후기가 수정되었습니다.");
+		location.href = "/admin/reviews";
 	})
 	.fail((error) => {
 		console.log(error);

@@ -17,4 +17,6 @@ public interface ReviewRepository {
 	
 	public List<Review> getReviewList();
 	public Review getReview(int reviewCode);
+	
+	public int modifyReview(int reviewCode, Review review);
 }

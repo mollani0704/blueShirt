@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 
 import com.project.blueshirt.model.estimate.Estimate;
 import com.project.blueshirt.model.item.Item;
@@ -51,7 +52,7 @@ public class AdminPageController {
 		return "/page/admin/item/admin_itemSave";
 	}
 	
-	@GetMapping("/admin/review")
+	@GetMapping("/admin/reviews")
 	public String adminReviewList(Model model) {
 		
 		try {
@@ -63,7 +64,23 @@ public class AdminPageController {
 			System.out.println("오류 발생");
 		}
 		
-		return "/page/admin/review/admin_review";
+		return "/page/admin/review/admin_reviews";
+	}
+	
+	@GetMapping("/admin/reviews/{reviewCode}")
+	public String adminReviewModifyPage(@PathVariable int reviewCode,
+			Model model) {
+		try {
+			Review review = reviewService.getReview(reviewCode);
+			model.addAttribute("review", review);
+			
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			return "오류 발생";
+		}
+		
+		return "/page/admin/review/admin_reviewModify";
 	}
 	
 	@GetMapping("/admin/review/save")

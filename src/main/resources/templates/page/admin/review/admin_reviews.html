@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<meta charset="UTF-8">
+	    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	    
+	    <link rel="stylesheet" href="/static/css/style.css">
+	    <link rel="stylesheet" href="/static/css/review/reviewList.css"/>
+	    
+	    <script type="text/javascript" src="https://code.jquery.com/jquery-latest.min.js"></script>
+	    <script src="/static/js/review/admin_reviewList.js" defer></script>
+	    <title>Document</title>
+	</head>
+	<body>
+		<div class="reviewList__container">		
+			<h1>작업후기 목록</h1>
+			<table class="reviewList">
+				<thead>
+					<tr>
+						<th>작업코드</th>
+						<th>작업명</th>
+						<th>작성날짜</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr class="review__list" th:each="review : ${reviewLists}">
+						<td class="review__code" th:text=${review.code}>test</td>
+						<td th:text=${review.title}>test</td>
+						<td th:text=${review.create_date}>test</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>	
+	</body>
+</html>

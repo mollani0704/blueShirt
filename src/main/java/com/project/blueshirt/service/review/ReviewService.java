@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.stereotype.Service;
 
+import com.project.blueshirt.dto.ModifyReviewDto;
 import com.project.blueshirt.dto.SaveReviewDto;
 import com.project.blueshirt.model.review.Review;
 
@@ -15,4 +16,5 @@ public interface ReviewService {
 	
 	public Review getReview(int reviewCode) throws Exception;
 	
+	public Boolean modifyReview(int reviewCode, ModifyReviewDto modifyReviewDto) throws Exception;
 }
