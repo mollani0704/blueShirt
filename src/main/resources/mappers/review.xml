@@ -4,7 +4,23 @@
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.project.blueshirt.repository.review.ReviewRepository">
 	
-	<update id="modifyReview" parameterType="Integer"></update>
+	<delete id="deleteReview" parameterType="Integer">
+		delete from review
+		where
+			code = #{reviewCode};
+	
+	</delete>
+	
+	<update id="modifyReview" parameterType="hashmap">
+		update
+			review
+		set
+			review_title = #{modifyReview.title},
+			review_content = #{modifyReview.content},
+			update_date = now()
+		where
+			code = #{reviewCode};
+	</update>
 	
 	<select id="getReviewList" resultType="com.project.blueshirt.model.review.Review">
 		select

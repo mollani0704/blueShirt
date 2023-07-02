@@ -1,6 +1,7 @@
 package com.project.blueshirt.repository.review;
 
 import java.util.List;
+import java.util.Map;
 
 import org.apache.ibatis.annotations.Mapper;
 import org.springframework.stereotype.Repository;
@@ -18,5 +19,7 @@ public interface ReviewRepository {
 	public List<Review> getReviewList();
 	public Review getReview(int reviewCode);
 	
-	public int modifyReview(int reviewCode, Review review);
+	public int modifyReview(Map<String, Object> map);
+	
+	public int deleteReview(int reviewCode);
 }

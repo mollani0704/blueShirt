@@ -1,6 +1,7 @@
 package com.project.blueshirt.controller.admin;
 
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
@@ -22,12 +23,12 @@ public class AdminController {
 	private final ReviewService reviewService;
 	
 	@PutMapping("/api/review/modify/{reviewCode}")
-	public ResponseEntity<?> saveReview(@PathVariable int reviewCode, ModifyReviewDto modifyReviewDto) {
+	public ResponseEntity<?> modifyReview(@PathVariable int reviewCode, ModifyReviewDto modifyReviewDto) {
 		
 		Boolean result = false;
 		
 		try {
-			result = reviewService.modifyReview(modifyReviewDto);
+			result = reviewService.modifyReview(reviewCode,modifyReviewDto);
 		} catch (Exception e) {
 			e.printStackTrace();
 			return ResponseEntity.internalServerError().body(result);
@@ -35,5 +36,20 @@ public class AdminController {
 		
 		return ResponseEntity.ok().body(result);
 	}
+	
+	@DeleteMapping("/api/review/delete/{reviewCode}")
+	public ResponseEntity<?> deleteReview(@PathVariable int reviewCode) {
+		Boolean result = false;
+		
+		try {
+			result = reviewService.deleteReview(reviewCode);
+		} catch (Exception e) {
+			e.printStackTrace();
+			return ResponseEntity.internalServerError().body(result);
+		}
+		
+		return ResponseEntity.ok().body(result);
+	}
+	
 	
 }

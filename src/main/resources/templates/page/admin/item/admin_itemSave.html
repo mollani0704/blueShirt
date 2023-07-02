@@ -14,25 +14,41 @@
 		<div class="itemSave__container">
 			<h1>상품등록</h1>
 			<form enctype="multipart/form-data">
-				<div class=info>				
-					<label>상품이름</label>
-					<input class="item_name" name="item_name" type="text" placeholder="상품명을 적어주세요"><br>
+				<div class=info>
+					<div class="info__title">					
+						<label>상품이름</label>
+					</div>
+					<div class="info__content">					
+						<input class="item_name" name="item_name" type="text" placeholder="상품명을 적어주세요"><br>
+					</div>
 				</div>
-				<div class="info">				
-					<label>사진</label>
-					<input class="image" name="itemImageFiles" type="file" placeholder="첨부파일" multiple accept=".jpg, .jpeg, .png, .gif"><br>
+				<div class="info">
+					<div class="info__title">					
+						<label>사진</label>
+					</div>
+					<div class="info__content">					
+						<input class="image" name="itemImageFiles" type="file" placeholder="첨부파일" multiple accept=".jpg, .jpeg, .png, .gif"><br>
+					</div>				
 				</div>
-				<div class="info">				
-					<label>가격</label>
-					<input class="item_price" name="item_price" type="text" placeholder="상품가격을 적어주세요"><br>
+				<div class="info">
+					<div class="info__title">					
+						<label>가격</label>
+					</div>
+					<div class="info__content">					
+						<input class="item_price" name="item_price" type="text" placeholder="상품가격을 적어주세요"><br>
+					</div>
 				</div>
-				<div class="info">				
-					<label>재고수량</label>
-					<input class="item_stockQuantity" name="item_stockQuantity" type="text"  placeholder="재고수량을 입력해주세요"><br>
+				<div class="info">
+					<div class="info__title">					
+						<label>재고수량</label>
+					</div>
+					<div class="info__content">					
+						<input class="item_stockQuantity" name="item_stockQuantity" type="text"  placeholder="재고수량을 입력해주세요"><br>
+					</div>		
 				</div>
 			</form>
 			<button class="save__btn">저장</button>
-			<button class="cancel__btn">취소</button>
+			<button class="cancel__btn" onclick="location.href='/admin'">취소</button>
 		</div>		
 	</body>
 </html>

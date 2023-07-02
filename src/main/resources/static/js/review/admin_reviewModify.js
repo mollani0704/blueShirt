@@ -34,7 +34,19 @@ modifyBtn.addEventListener('click', () => {
 	})
 	.fail((error) => {
 		console.log(error);
-	})
+	})	
+})
 
-	
+deleteBtn.addEventListener('click', () => {
+	$.ajax({
+		type: "delete",
+		url: `/api/review/delete/${reviewCode}`
+	})
+	.done((response) => {
+		alert("글 삭제가 완료 되었습니다.")
+		location.href = "/admin/reviews";
+	})
+	.fail((error) => {
+		console.log(error);
+	})
 })

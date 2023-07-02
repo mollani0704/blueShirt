@@ -21,6 +21,8 @@ body {
 }
 
 .reviewList__container {
+	position: relative;
+	
 	width: 100%;
 	height: 800px;
 	background-color: var(color-light-white);
@@ -31,7 +33,7 @@ body {
 }
 
 .reviewList {
-	position: relative;
+	
 	
 	border: 1px #a39485 solid;
 	font-size: 0.9em;
@@ -62,4 +64,45 @@ td {
 	border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 	background-color: #fff;
 	text-align: center;
+}
+
+tbody > tr {
+	cursor: pointer;
+}
+
+.adminHome__btn {
+	position: absolute;
+	top: 5%;
+	right: 8%;
+	
+	width: 120px;
+	height: 30px;
+	line-height: 30px;
+	font-size: 15px;
+	color: var(--color-white);
+	font-weight: 600;
+	font-family: 'Noto Sans KR', sans-serif;
+	background-color: var(--color-black);
+	border-radius: 5px;
+	border: none;
+	cursor: pointer;
+	
+}
+
+.reviewSave__btn {
+	position: absolute;
+	top: 40%;
+	right: 8%;
+	
+	width: 120px;
+	height: 30px;
+	line-height: 30px;
+	font-size: 15px;
+	color: var(--color-white);
+	font-weight: 600;
+	font-family: 'Noto Sans KR', sans-serif;
+	background-color: var(--color-dark-blue);
+	border-radius: 5px;
+	border: none;
+	cursor: pointer;
 }

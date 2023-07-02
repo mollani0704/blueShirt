@@ -5,7 +5,9 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.UUID;
 import java.util.function.Predicate;
 
@@ -108,17 +110,23 @@ public class ReviewServiceImpl implements ReviewService{
 	@Override
 	public Boolean modifyReview(int reviewCode, ModifyReviewDto modifyReviewDto) throws Exception {
 		
-Predicate<String> predicate = (filename) -> !filename.isBlank();
+		Predicate<String> predicate = (filename) -> !filename.isBlank();
 		
 		Review review = null;
 		boolean result = false;
+		
+		Map<String , Object> reviewParam = new HashMap<String, Object>();
+		
 		
 		review = Review.builder()
 					.title(modifyReviewDto.getTitle())
 					.content(modifyReviewDto.getContent())
 					.build();
 		
-		result = reviewRepository.modifyReview(reviewCode, review) > 0;
+		reviewParam.put("modifyReview", review);
+		reviewParam.put("reviewCode", reviewCode);
+		
+		result = reviewRepository.modifyReview(reviewParam) > 0;
 		
 		
 		if(predicate.test(modifyReviewDto.getReviewImageFiles().get(0).getOriginalFilename())) {
@@ -157,6 +165,12 @@ Predicate<String> predicate = (filename) -> !filename.isBlank();
 		}
 		
 		return result;
+	}
+
+	@Override
+	public Boolean deleteReview(int reviewCode) throws Exception {
+		
+		return reviewRepository.deleteReview(reviewCode) > 0;
 	}
 
 }
