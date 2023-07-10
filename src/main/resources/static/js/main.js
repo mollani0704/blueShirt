@@ -22,6 +22,7 @@ let slideCount = slide.length;
 let slideWidth = 1550
 
 makeClone();
+mainImageLoad();
 
 function makeClone() {
     for (let i = 0; i < slideCount; i++) {
@@ -93,6 +94,21 @@ for(let i = 0; i < mainReviewList.length; i++) {
 		console.log(mainReviewCode[i].textContent);
 		
 		location.href = `/review/${mainReviewCode[i].textContent}`
+	})
+}
+
+// main image 불러오기
+function mainImageLoad() {
+	$.ajax({
+		async: false,
+		type: "GET",
+		url: "/api/image/main"
+	})
+	.done((response) => {
+		console.log(response);
+	})
+	.fail((error) => {
+		console.log(error);
 	})
 }
 

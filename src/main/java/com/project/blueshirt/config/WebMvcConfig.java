@@ -23,7 +23,7 @@ public class WebMvcConfig implements WebMvcConfigurer{
 WebMvcConfigurer.super.addResourceHandlers(registry);
 		
 		registry.addResourceHandler("/image/**")
-			.addResourceLocations("file://" + filePath)
+			.addResourceLocations("file:///" + filePath)
 			.setCachePeriod(60 * 60)
 			.resourceChain(true)
 			.addResolver(new PathResourceResolver() {

@@ -1,5 +1,6 @@
 package com.project.blueshirt.controller.member;
 
+import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
@@ -9,10 +10,12 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.core.io.FileSystemResource;
 import org.springframework.core.io.Resource;
+import org.springframework.http.ContentDisposition;
 import org.springframework.http.HttpHeaders;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.project.blueshirt.model.review.Review;
 import com.project.blueshirt.service.review.ReviewService;
@@ -25,15 +28,16 @@ import lombok.extern.slf4j.Slf4j;
 @RequiredArgsConstructor
 public class MemberPageController {
 	
+	@Value("${file.path}")
+	private String filePath;
+	
 	private final ReviewService reviewService;
 
 	@GetMapping("/")
 	public String indexPage(Model model) {
-		
 		try {
 			
 			List<Review> reviews = reviewService.getReviews();
-	
 			model.addAttribute("reviews", reviews);
 			
 		} catch (Exception e) {
@@ -43,6 +47,7 @@ public class MemberPageController {
 		
 		return "page/main";
 	}
+	
 	
 	@GetMapping("/chungCompany")
 	public String introducePage() {

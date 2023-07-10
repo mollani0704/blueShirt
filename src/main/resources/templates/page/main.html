@@ -6,7 +6,9 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="stylesheet" href="/static/css/style.css" />
         <link rel="stylesheet" href="/static/css/index.css" />
+        <script type="text/javascript" src="https://code.jquery.com/jquery-latest.min.js"></script>
         <script src="/static/js/main.js" defer></script>
+        
         <title>Document</title>
     </head>
     <body>
@@ -154,7 +156,7 @@
 	                    <h1>조작없는 실제 작업현장 후기</h1>
 	                    <div class="cleaning__lists">
 	                        <div class="cleaning__list" th:each="reviews : ${reviews}">
-	                            <img src="/static/img/logo.png" alt="썸네일" />
+	                            <img th:src="@{/image/review/?filename=} + ${reviews.file_name}" alt="썸네일" />
 	                            <p th:text=${reviews.code} class="main__review--code"></p>
 	                            <p th:text=${reviews.title}>하단 주방 바닥청소, 홀 바닥청소</p>
 	                            <span th:text="${#temporals.format(reviews.create_date, 'yyyy-MM-dd')}">2023-06-15</span>
