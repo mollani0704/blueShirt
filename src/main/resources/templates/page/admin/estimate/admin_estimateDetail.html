@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<meta charset="UTF-8">
+	    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	    <script type="text/javascript" src="https://code.jquery.com/jquery-latest.min.js"></script>
+	    <link rel="stylesheet" href="/static/css/style.css">
+	    <link rel="stylesheet" href="/static/css/estimate/estimateDetail.css">	    
+	    <title>Document</title>
+	</head>
+	<body>
+		<div class="estimateDetail__container">
+			<h1>견적 상세 페이지</h1>
+		
+			<table class="estimateDetail">
+				<tbody>
+					<tr>
+						<th>이름</th>
+						<td th:text=${estimate.name}>문종성</td>
+					</tr>
+					<tr>
+						<th>연락처</th>
+						<td th:text=${estimate.phoneNumber}>010-1234-5678</td>
+					</tr>
+					<tr>
+						<th>청소유형</th>
+						<td th:text=${estimate.category}>입주청소</td>
+					</tr>
+					<tr>
+						<th>주소</th>
+						<td th:text=${estimate.location}>부산광역시 수영구 땡땡동</td>
+					</tr>
+					<tr>
+						<th>평형</th>
+						<td th:text=${estimate.size}>40평</td>
+					</tr>
+					<tr>
+						<th>내용</th>
+						<td th:text=${estimate.content}>어쩌구 저쩌구</td>
+					</tr>
+					<tr>
+						<th>작성일</th>
+						<td th:text=${estimate.create_date}>2023-07-11</td>
+					</tr>
+					<tr th:each="estiamteImage : ${estimate.file_name}">
+						<th>현장사진</th>
+						<td><img th:src="@{/image/estimate/?filename=} + ${estiamteImage}"  alt="이미지"></td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</body>
+</html>

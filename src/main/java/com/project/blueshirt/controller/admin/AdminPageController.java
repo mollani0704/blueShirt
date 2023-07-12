@@ -7,6 +7,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 
+import com.project.blueshirt.dto.EstimateDetailDto;
 import com.project.blueshirt.model.estimate.Estimate;
 import com.project.blueshirt.model.item.Item;
 import com.project.blueshirt.model.review.Review;
@@ -101,6 +102,22 @@ public class AdminPageController {
 		}
 		
 		return "/page/admin/estimate/admin_estimateList";
+	}
+	
+	@GetMapping("/admin/estimates/{estimateCode}")
+	public String adminEstimateDetail(@PathVariable int estimateCode, Model model) {
+		
+		try {
+			EstimateDetailDto estimate = estimateService.getEstimate(estimateCode);
+			model.addAttribute("estimate", estimate);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			System.out.println("오류 발생");
+		}
+		
+		return "/page/admin/estimate/admin_estimateDetail";
+		
 	}
 	
 }

@@ -5,6 +5,7 @@
 	    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 	    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	    <script type="text/javascript" src="https://code.jquery.com/jquery-latest.min.js"></script>
+	    <script src="/static/js/estimate/admin_estimateList.js" defer></script>
 	    <link rel="stylesheet" href="/static/css/style.css">
 	    <link rel="stylesheet" href="/static/css/estimate/estimateList.css"/>
 	    <title>Document</title>
@@ -27,8 +28,8 @@
 		    		</tr>
 		    	</thead>
 		    	<tbody>
-		    		<tr th:each="estimate : ${estimateList}">
-		    			<td th:text=${estimate.code}>test</td>
+		    		<tr class="estimate__list" th:each="estimate : ${estimateList}">
+		    			<td class="estimate__code" th:text=${estimate.code}>test</td>
 		    			<td th:text=${estimate.name}>test</td>
 		    			<td th:text=${estimate.phoneNumber}>test</td>
 		    			<td th:text=${estimate.category}>test</td>

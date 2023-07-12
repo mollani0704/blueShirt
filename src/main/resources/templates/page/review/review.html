@@ -22,7 +22,7 @@
 				<div class=sec1__container>
 					<div class=review__lists >
 						<div class="review__list" th:each="reviews : ${reviews}">
-							<img src="/static/img/logo.png"/>
+							<img th:src="@{/image/review/?filename=} + ${reviews.file_name}" alt="썸네일" />
 							<p class="review__code" th:text=${reviews.code}></p>
 							<p th:text=${reviews.title}>부산 바닥청소, 부산 데코타일 청소</p>
 							<span th:text="${#temporals.format(reviews.create_date, 'yyyy-MM-dd')}">2023-06-15</span>

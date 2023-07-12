@@ -4,6 +4,28 @@
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.project.blueshirt.repository.estimate.EstimateRepository">
 	
+	<select id="getEstimate" parameterType="Integer" resultType="com.project.blueshirt.model.estimate.EstimateDetail">
+		
+		select
+			e.code,
+			e.name,
+			e.phoneNumber,
+			e.category,
+			e.location,
+			e.size,
+			e.content,
+			e.createDate,
+			ei.file_code,
+			ei.file_name
+		from
+			estimate e
+			left outer join estimate_img ei on(e.code = ei.estimate_code)
+		where 
+			code = #{estimateCode};
+			
+	
+	</select>
+	
 	<select id="getEstimateList" resultType="com.project.blueshirt.model.estimate.Estimate">
 		
 		select
@@ -16,7 +38,7 @@
 			content,
 			createDate
 		from
-			estimate
+			estimate 
 		
 	</select>
 	

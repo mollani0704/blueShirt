@@ -20,9 +20,7 @@ body {
 	height: 100hw;
 }
 
-.reviewList__container {
-	position: relative;
-	
+.estimateDetail__container {
 	width: 100%;
 	height: 800px;
 	background-color: var(color-light-white);
@@ -32,78 +30,32 @@ body {
 	flex-direction: column;
 }
 
-.reviewList {
-	
-	
+.estimateDetail {
 	border: 1px #a39485 solid;
 	font-size: 0.9em;
 	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25);
 	width: 100%;
-	max-width: 1300px;
+	max-width: 1000px;
 	border-collapse: collapse;
 	border-radius: 5px;
 	overflow: hidden;
 }
 
-thead {
+th {
 	font-weight: bold;
 	color: #fff;
 	background-color: var(--color-dark-blue);
-}
-
-th {
 	text-align: center;
-}
-
-td, th {
 	padding: 1em 0.5em;
 	vertical-align: middle
 }
 
 td {
+	font-weight: bold;
+	padding: 1em 0.5em;
+	vertical-align: middle;
 	border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 	background-color: #fff;
 	text-align: center;
 }
 
-tbody > tr {
-	cursor: pointer;
-}
-
-.adminHome__btn {
-	position: absolute;
-	top: 5%;
-	right: 8%;
-	
-	width: 120px;
-	height: 30px;
-	line-height: 30px;
-	font-size: 15px;
-	color: var(--color-white);
-	font-weight: 600;
-	font-family: 'Noto Sans KR', sans-serif;
-	background-color: var(--color-black);
-	border-radius: 5px;
-	border: none;
-	cursor: pointer;
-	
-}
-
-.reviewSave__btn {
-	position: relative;
-	left: 590px;
-	
-	width: 120px;
-	height: 30px;
-	line-height: 30px;
-	font-size: 15px;
-	color: var(--color-white);
-	font-weight: 600;
-	font-family: 'Noto Sans KR', sans-serif;
-	background-color: var(--color-dark-blue);
-	border-radius: 5px;
-	border: none;
-	cursor: pointer;
-	
-	margin: 15px;
-}
