@@ -53,6 +53,21 @@ public class AdminPageController {
 		return "/page/admin/item/admin_itemSave";
 	}
 	
+	@GetMapping("/admin/item/{itemCode}")
+	public String adminItemDetail(@PathVariable int itemCode, Model model) {
+		
+		try {
+			Item data = itemService.getItem(itemCode);
+			model.addAttribute("item", data);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			System.out.println("오류 발생");
+		}
+		
+		return "/page/admin/item/admin_itemDetail";
+	}
+	
 	@GetMapping("/admin/reviews")
 	public String adminReviewList(Model model) {
 		
@@ -119,5 +134,7 @@ public class AdminPageController {
 		return "/page/admin/estimate/admin_estimateDetail";
 		
 	}
+	
+	
 	
 }

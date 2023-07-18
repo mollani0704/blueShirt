@@ -4,27 +4,36 @@
 		<meta charset="UTF-8">
 	    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 	    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	    <link rel="stylesheet" href="/static/css/style.css"/>
+	    <link rel="stylesheet" href="/static/css/item/itemList.css"/>
 	    <script type="text/javascript" src="https://code.jquery.com/jquery-latest.min.js"></script>
-	    <script src="/static/js/item/admin_itemUpdate.js" defer></script>
+	    <script src="/static/js/item/admin_itemList.js" defer></script>
 	    <title>Document</title>
 	</head>
 	<body>
-		<h1>상품목록</h1>
-		<div>
-			<ul th:each="item : ${itemLists}">
-			<form enctype="multipart/form-data">
-				<li class="item__code" th:text="${item.code}" th:value="${item.code}"></li>
-				<label>상품이름</label>
-				<input class="item__name" type="text" th:value="${item.item_name}" /><br>
-				<label>가격</label>
-				<input class="item__price" type="text" th:value="${item.price}"/><br>
-				<label>재고수량</label>
-				<input class="item__stockQuantity" type="text" th:value="${item.stockQuantity}">
-			</form>
-			<button class="update__btn">상품수정</button>
-			<button class="delete__btn" onclick>상품삭제</button>
-			</ul>
-		</div>
-		<button onclick="location.href='/admin/items/save'">상품등록</button>
+		<div class="itemList__container">
+			<h1>상품목록</h1>
+			<table class="itemList">
+				<thead>
+					<tr>
+						<th>아이템코드</th>
+						<th>아이템명</th>
+						<th>가격</th>
+						<th>수량</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr class="item__list" th:each="item : ${itemLists}">
+						<td class="item__code" th:text="${item.code}"></td>
+						<td th:text="${item.item_name}"></td>
+						<td th:text="${item.price}"></td>
+						<td th:text="${item.stockQuantity}"></td>
+					</tr>
+				</tbody>
+			</table>
+			
+			<button class="adminHome__btn" onclick="location.href='/admin'">Admin Page</button>
+			<button class="itemSave__btn" onclick="location.href='/admin/items/save'">상품등록</button>
+		</div>		
 	</body>
 </html>

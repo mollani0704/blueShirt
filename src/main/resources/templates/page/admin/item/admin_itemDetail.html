@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<meta charset="UTF-8">
+	    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	    <link rel="stylesheet" href="/static/css/style.css">
+	    <link rel="stylesheet" href="/static/css/item/itemModify.css">
+	    <script type="text/javascript" src="https://code.jquery.com/jquery-latest.min.js"></script>
+	    <script src="/static/js/item/admin_itemUpdate.js" defer></script>
+	    <title>Document</title>
+	</head>
+	<body>
+		<div class="itemSave__container">
+			<h1>상품 상세페이지</h1>
+			<form enctype="multipart/form-data">
+				<input th:value="${item.code}" class="item__code" hidden>
+				<div class=info>
+					<div class="info__title">					
+						<label>상품이름</label>
+					</div>
+					<div class="info__content">					
+						<input th:value="${item.item_name}" class="item_name" name="item_name" type="text" placeholder="상품명을 적어주세요"><br>
+					</div>
+				</div>
+				<div class="info">
+					<div class="info__title">					
+						<label>사진</label>
+					</div>
+					<div class="info__content">					
+						<input class="image" name="itemImageFiles" type="file" placeholder="첨부파일" multiple accept=".jpg, .jpeg, .png, .gif"><br>
+					</div>				
+				</div>
+				<div class="info">
+					<div class="info__title">					
+						<label>가격</label>
+					</div>
+					<div class="info__content">					
+						<input th:value="${item.price}" class="item_price" name="item_price" type="text" placeholder="상품가격을 적어주세요"><br>
+					</div>
+				</div>
+				<div class="info">
+					<div class="info__title">					
+						<label>재고수량</label>
+					</div>
+					<div class="info__content">					
+						<input th:value="${item.stockQuantity}" class="item_stockQuantity" name="item_stockQuantity" type="text"  placeholder="재고수량을 입력해주세요"><br>
+					</div>		
+				</div>
+			</form>
+			<button class="update__btn">수정</button>
+			<button class="delete__btn">삭제</button>
+			<button class="cancel__btn" onclick="location.href='/admin'">취소</button>
+		</div>		
+	</body>
+</html>

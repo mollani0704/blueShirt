@@ -1,4 +1,3 @@
-@charset "UTF-8";
 @import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700;800&family=Noto+Sans+KR:wght@400;700&display=swap');
 
 :root {
@@ -20,7 +19,7 @@ body {
 	height: 100hw;
 }
 
-.reviewList__container {
+.itemList__container {
 	position: relative;
 	
 	width: 100%;
@@ -32,8 +31,7 @@ body {
 	flex-direction: column;
 }
 
-.reviewList {
-	
+.itemList {
 	border: 1px #a39485 solid;
 	font-size: 0.9em;
 	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25);
@@ -88,7 +86,7 @@ tbody > tr {
 	
 }
 
-.reviewSave__btn {
+.itemSave__btn {
 	position: relative;
 	left: 590px;
 	

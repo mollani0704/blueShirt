@@ -29,6 +29,8 @@ saveBtn.addEventListener('click', () => {
 	})
 	.done((response) => {
 		console.log(response);
+		alert("상품이 등록되었습니다.")
+		location.href = "/admin";
 	})
 	.fail((error) => {
 		console.log(error);
