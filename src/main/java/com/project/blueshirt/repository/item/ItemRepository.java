@@ -1,6 +1,7 @@
 package com.project.blueshirt.repository.item;
 
 import java.util.List;
+import java.util.Map;
 
 import org.apache.ibatis.annotations.Mapper;
 import org.springframework.stereotype.Repository;
@@ -16,4 +17,7 @@ public interface ItemRepository {
 	
 	public List<Item> getItemList();
 	public Item getItem(int itemCode);
+	
+	public int modifyItem(Map<String, Object> map);
+	public int deleteItem(int itemCode);
 }

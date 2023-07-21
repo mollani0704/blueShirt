@@ -19,37 +19,4 @@ import lombok.extern.slf4j.Slf4j;
 @RequiredArgsConstructor
 public class AdminController {
 	
-	
-	private final ReviewService reviewService;
-	
-	@PutMapping("/api/review/modify/{reviewCode}")
-	public ResponseEntity<?> modifyReview(@PathVariable int reviewCode, ModifyReviewDto modifyReviewDto) {
-		
-		Boolean result = false;
-		
-		try {
-			result = reviewService.modifyReview(reviewCode,modifyReviewDto);
-		} catch (Exception e) {
-			e.printStackTrace();
-			return ResponseEntity.internalServerError().body(result);
-		}
-		
-		return ResponseEntity.ok().body(result);
-	}
-	
-	@DeleteMapping("/api/review/delete/{reviewCode}")
-	public ResponseEntity<?> deleteReview(@PathVariable int reviewCode) {
-		Boolean result = false;
-		
-		try {
-			result = reviewService.deleteReview(reviewCode);
-		} catch (Exception e) {
-			e.printStackTrace();
-			return ResponseEntity.internalServerError().body(result);
-		}
-		
-		return ResponseEntity.ok().body(result);
-	}
-	
-	
 }

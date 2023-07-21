@@ -36,7 +36,7 @@
 						<label>가격</label>
 					</div>
 					<div class="info__content">					
-						<input th:value="${item.price}" class="item_price" name="item_price" type="text" placeholder="상품가격을 적어주세요"><br>
+						<input th:value="${item.price}" class="item_price" name="price" type="text" placeholder="상품가격을 적어주세요"><br>
 					</div>
 				</div>
 				<div class="info">
@@ -44,13 +44,13 @@
 						<label>재고수량</label>
 					</div>
 					<div class="info__content">					
-						<input th:value="${item.stockQuantity}" class="item_stockQuantity" name="item_stockQuantity" type="text"  placeholder="재고수량을 입력해주세요"><br>
+						<input th:value="${item.stockQuantity}" class="item_stockQuantity" name="stockQuantity" type="text"  placeholder="재고수량을 입력해주세요"><br>
 					</div>		
 				</div>
 			</form>
 			<button class="update__btn">수정</button>
 			<button class="delete__btn">삭제</button>
-			<button class="cancel__btn" onclick="location.href='/admin'">취소</button>
+			<button class="cancel__btn" onclick="location.href='/admin/items'">취소</button>
 		</div>		
 	</body>
 </html>

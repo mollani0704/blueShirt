@@ -4,6 +4,23 @@
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.project.blueshirt.repository.item.ItemRepository">
 
+	<delete id="deleteItem" parameterType="Integer">
+		delete from item
+		where
+			id = #{itemCode};
+	</delete>
+
+	<update id="modifyItem" parameterType="hashmap">
+		update
+			item
+		set
+			item_name = #{modifyItem.item_name},
+			price = #{modifyItem.price},
+			stockQuantity = #{modifyItem.stockQuantity}
+		where
+			id = #{itemCode}
+	</update>
+
 	<select id="getItemList" resultType="com.project.blueshirt.model.item.Item">
 		
 		select
