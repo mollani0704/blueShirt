@@ -14,7 +14,7 @@
 			<div class="item__detail--line"></div>
 			<section class="detail__section">
 				<div class=detail__box>
-					<img src="/static/img/logo.png" alt="">
+					<img th:src="@{/image/item/?filename=} + ${itemData.file_name}" alt="">
 					<div class="detail__info" th:with="itemData = ${itemData}">
 						<h1 th:text=${itemData.item_name}></h1>
 						<table class="info__table">
@@ -31,7 +31,7 @@
 								<td>청남방</td>
 							</tr>
 						</table>
-						<button class="buying__btn">구매하기</button>		
+						<button class="buying__btn" th:onclick="|location.href='@{/order(itemCode=${itemData.code})}'|">구매하기</button>		
 					</div>
 				</div>
 			</section>

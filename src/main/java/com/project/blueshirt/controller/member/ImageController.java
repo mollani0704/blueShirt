@@ -75,4 +75,25 @@ public class ImageController {
 	
 		return new ResponseEntity<Resource>(resource, header, HttpStatus.OK);
 	}
+	
+	@GetMapping("/image/item")
+	public ResponseEntity<?> getItemImage(@RequestParam("filename") String filename) {
+		String folder = "item/";
+		
+		Resource resource = new FileSystemResource(filePath + folder + filename);
+		if(!resource.exists()) {
+			return new ResponseEntity<Resource>(HttpStatus.NOT_FOUND);
+		}
+		
+		HttpHeaders header = new HttpHeaders();
+		Path filePath = null;
+		try {
+			filePath = Paths.get(filePath + folder + filename);
+			header.add("Content-type", Files.probeContentType(filePath));
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	
+		return new ResponseEntity<Resource>(resource, header, HttpStatus.OK);
+	}
 }

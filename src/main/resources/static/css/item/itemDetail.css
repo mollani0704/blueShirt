@@ -97,5 +97,7 @@ tr > th {
 	border: 1px solid #000;
 	
 	font-family: 'Noto Sans KR', sans-serif;
+	
+	cursor: pointer;
 }
 

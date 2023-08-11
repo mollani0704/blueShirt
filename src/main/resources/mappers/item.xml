@@ -24,23 +24,29 @@
 	<select id="getItemList" resultType="com.project.blueshirt.model.item.Item">
 		
 		select
-			id,
-			item_name,
-			price,
-			stockQuantity
+			i.id,
+			i.item_name,
+			i.price,
+			i.stockQuantity,
+			di.file_code,
+			di.file_name
 		from 
-			item
+			item i
+			left outer join item_img di on(i.id = di.item_code);
 	
 	</select>
 	
 	<select id="getItem" parameterType="Integer" resultType="com.project.blueshirt.model.item.Item">
 		select
-			id,
-			item_name,
-			price,
-			stockQuantity
+			i.id,
+			i.item_name,
+			i.price,
+			i.stockQuantity,
+			di.file_code,
+			di.file_name
 		from
-			item
+			item i
+			left outer join item_img di on(i.id = di.item_code)
 		where
 			id = #{itemCode};
 	</select>

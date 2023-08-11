@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<meta charset="UTF-8">
+	    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<script type="text/javascript" src="https://code.jquery.com/jquery-latest.min.js"></script>
+		<link rel="stylesheet" href="/static/css/style.css" />
+		<link rel="stylesheet" href="/static/css/order/order.css"/>
+		<script src="/static/js/order/order.js" defer></script>
+		<title>Insert title here</title>
+	</head>
+	<body>
+		<div class="order__container">
+			<th:block th:replace="/page/fragment/header"></th:block>
+			<div class="order__line"></div>
+			<div class=order__header>
+				<h1>상품 구매</h1>
+				<table class="itemList">
+					<thead>
+						<tr>
+							<th>상품명</th>
+							<th>가격</th>
+							<th>수량</th>
+							<th>합계</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td >
+								<div class="itemInfo">
+									<img th:src="@{/image/item/?filename=} + ${itemData.file_name}" alt="이미지">
+									<p th:text=${itemData.item_name}>청소기</p>
+								</div>
+							</td>
+							<td class="price" th:text=${itemData.price}>100000</td>
+							<td>
+								<select class="itemStockQuantity" onChange="changeFn()">
+									<th:block th:each="num : ${#numbers.sequence(1,{itemData.stockQuantity})}">
+										<option th:value="${num}" th:text="${num}"></option>
+									</th:block>
+								</select>
+							</td>
+							<td th:text="${itemData.price}" class="totalPrice">100000</td>
+						</tr>
+					</tbody>
+				</table>			
+			</div>
+			<section class="section1">
+				<div class="sec1__container">
+					<h1>Billing Address</h1>	
+					<form enctype="multipart/form-data">
+						<div class="order__info">
+							<label>Name</label>
+							<input class="name" name="name" type="text" placeholder="이름을 입력해주세요">
+						</div>
+						<div class="order__info">
+							<label>Email</label>
+							<input class="email" name="email" type="email" placeholder="이메일을 입력해주세요">
+						</div>
+						<div class="order__info">
+							<label>PhoneNumber</label>
+							<input class="phoneNumber" name="phoneNumber" type="text" placeholder="휴대폰 번호를 입력해주세요">
+						</div>
+						<div class="order__info">
+							<label>Address</label>
+							<input class="address" name="address" type="text" placeholder="주소를 입력해주세요">
+						</div>
+					</form>
+					<table>
+						<tbody>
+							<tr>
+								<th>이름</th>
+								<td>문종성</td>
+							</tr>
+							<tr>
+								<th>배송주소</th>
+								<td>부산광역시 수영구...</td>
+							</tr>
+							<tr>
+								<th>휴대폰 번호</th>
+								<th>010-5466-0378</th>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</section>
+			<button class="buying__button">구매하기</button>
+			<button class="cancel__button">취소하기</button>
+			<th:block th:replace="/page/fragment/footer"></th:block>
+		</div>
+	</body>
+</html>

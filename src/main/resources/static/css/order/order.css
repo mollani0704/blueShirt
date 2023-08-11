@@ -1,0 +1,147 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700;800&family=Noto+Sans+KR:wght@400;700&display=swap');
+
+:root {
+	/* Color */
+	--color-white: #ffffff;
+    --color-light-white: #eeeeee;
+    --color-dark-white: #dbdbdb;
+    --color-blue: #73aace;
+    --color-light-blue: #47b5ff;
+    --color-dark-blue: #2471c8;
+    --color-dark-grey: #4d4d4d;
+    --color-grey: #616161;
+    --color-light-grey: #7c7979;
+    --color-black: #000000;
+}
+
+.order__container {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.order__line {
+	width: 100%;
+	height: 45px;
+	background-color: var(--color-dark-blue);
+}
+
+.order__header {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	
+	width: 100%;
+}
+
+.itemList {
+	width: 70%;
+	border-top: 3px solid var(--color-dark-blue);
+	border-collapse: collapse;
+}
+
+.section1 {
+	width: 100%;
+	height: 80%;
+	
+	padding-top: 25px;
+	
+	background-color:var(--color-white);
+	
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.sec1__container {
+	height: 100%;
+	width: 100%;
+	
+	max-width: 1200px;
+	
+	padding-top: 25px;
+	
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+
+thead {
+	border-collapse: collapse;
+	font-weight: bold;
+	color: var(--color-black);
+	border-bottom: 3px solid var(--color-dark-blue);
+}
+
+th {
+	text-align: center;
+}
+
+td, th {
+	padding: 1em 0.5em;
+	vertical-align: middle
+}
+
+td {
+	border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+	background-color: #fff;
+	text-align: center;
+}
+
+.itemInfo {
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+}
+
+.itemInfo > span {
+	text-align: center;
+	line-height: 50px;
+}
+
+form {
+	width: 50%;
+}
+
+.order__info {
+	display: flex;
+	flex-direction: column;
+	
+	width: 100%;
+	margin-bottom: 30px;
+}
+
+.buying__button {
+	width: 400px;
+	height: 50px;
+	line-height: 50px;
+	font-size: 24px;
+	color: var(--color-white);
+	font-weight: 600;
+	font-family: 'Noto Sans KR', sans-serif;
+	background-color: var(--color-dark-blue);
+	border-radius: 20px;
+	border: none;
+	cursor: pointer
+}
+
+.cancel__button {
+	width: 400px;
+	height: 50px;
+	line-height: 50px;
+	font-size: 24px;
+	color: var(--color-white);
+	font-weight: 600;
+	font-family: 'Noto Sans KR', sans-serif;
+	background-color: var(--color-black);
+	border-radius: 20px;
+	border: none;
+	
+	margin-top: 10px;
+	cursor: pointer;
+}

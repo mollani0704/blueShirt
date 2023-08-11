@@ -10,4 +10,6 @@ public class Item {
 	private String item_name;
 	private int price;
 	private int stockQuantity;
+	private int file_code;
+	private String file_name;
 }

@@ -18,7 +18,7 @@
 			<section class="item__section" >
 				<ul class="item__lists" >
 					<li class="item__list" th:each="item : ${itemLists}">
-						<img alt="" src="/static/img/logo.png">
+						<img alt="" th:src="@{/image/item/?filename=} + ${item.file_name}">
 						<ul class="item__info">
 							<li class="item__code" th:value=${item.code}>
 							<li class="item__name" th:text=${item.item_name}>화장실 클리너</li>
