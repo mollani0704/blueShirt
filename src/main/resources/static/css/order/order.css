@@ -116,6 +116,11 @@ form {
 	margin-bottom: 30px;
 }
 
+.order__info > input {
+	width: 70%;
+	height: 40px;
+}
+
 .buying__button {
 	width: 400px;
 	height: 50px;

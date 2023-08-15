@@ -8,6 +8,7 @@
 		<link rel="stylesheet" href="/static/css/style.css" />
 		<link rel="stylesheet" href="/static/css/order/order.css"/>
 		<script src="/static/js/order/order.js" defer></script>
+		<script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js" defer></script>
 		<title>Insert title here</title>
 	</head>
 	<body>
@@ -67,6 +68,13 @@
 							<input class="address" name="address" type="text" placeholder="주소를 입력해주세요">
 						</div>
 					</form>
+					<input type="text" id="sample4_postcode" placeholder="우편번호">
+					<input type="button" onclick="sample4_execDaumPostcode()" value="우편번호 찾기"><br>
+					<input type="text" id="sample4_roadAddress" placeholder="도로명주소">
+					<input type="text" id="sample4_jibunAddress" placeholder="지번주소">
+					<span id="guide" style="color:#999;display:none"></span>
+					<input type="text" id="sample4_detailAddress" placeholder="상세주소">
+					<input type="text" id="sample4_extraAddress" placeholder="참고항목">
 					<table>
 						<tbody>
 							<tr>
