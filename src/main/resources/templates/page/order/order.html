@@ -49,53 +49,54 @@
 			</div>
 			<section class="section1">
 				<div class="sec1__container">
-					<h1>Billing Address</h1>	
-					<form enctype="multipart/form-data">
+					<h1>Billing Address</h1>
+					<form th:object="${order}" method="post">
 						<div class="order__info">
 							<label>Name</label>
-							<input class="name" name="name" type="text" placeholder="이름을 입력해주세요">
+							<input class="name" name="name" type="text" th:field="*{name}" 
+							th:errorclass="field-error" placeholder="이름을 입력해주세요">
+							<div class="field-error text" th:errors="*{name}">상품명 오류</div>
 						</div>
 						<div class="order__info">
 							<label>Email</label>
-							<input class="email" name="email" type="email" placeholder="이메일을 입력해주세요">
+							<input class="email" name="email" type="email" th:field="*{email}"
+							 th:errorclass="field-error" placeholder="이메일을 입력해주세요">
+							 <div class="field-error text" th:errors="*{email}">상품명 오류</div>
 						</div>
 						<div class="order__info">
 							<label>PhoneNumber</label>
-							<input class="phoneNumber" name="phoneNumber" type="text" placeholder="휴대폰 번호를 입력해주세요">
+							<input class="phoneNumber" name="phoneNumber" type="text" th:field="*{phoneNumber}"  
+							th:errorclass="field-error" placeholder="휴대폰 번호를 입력해주세요">
+							<p>※ 010-xxxx-xxxx 양식으로 작성해 주세요</p>
+							<div class="field-error text" th:errors="*{phoneNumber}">상품명 오류</div>
 						</div>
 						<div class="order__info">
 							<label>Address</label>
-							<input class="address" name="address" type="text" placeholder="주소를 입력해주세요">
+							<input type="text" id="postcode" name="postCode" th:field="*{postCode}" 
+							th:errorclass="field-error" placeholder="우편번호">
+							<div class="field-error text" th:errors="*{postCode}">상품명 오류</div>
+							
+							<input type="button" onclick="sample4_execDaumPostcode()" value="우편번호 찾기"><br>
+							<input type="text" id="roadAddress" name="roadAddress" th:field="*{roadAddress}" 
+							th:errorclass="field-error" placeholder="도로명주소">
+							<div class="field-error text" th:errors="*{roadAddress}">상품명 오류</div>
+							
+							<input type="text" id="jibunAddress" name="jibunAddress" placeholder="지번주소">
+							<span id="guide" style="color:#999;display:none"></span>
+							<input type="text" id="detailAddress" name="detailAddress" th:field="*{detailAddress}" 
+							th:errorclass="field-error" placeholder="상세주소">
+							<div class="field-error text" th:errors="*{detailAddress}">상품명 오류</div>
+							
+							<input type="text" id="extraAddress" name="extraAddress" placeholder="참고항목">							
 						</div>
-					</form>
-					<input type="text" id="sample4_postcode" placeholder="우편번호">
-					<input type="button" onclick="sample4_execDaumPostcode()" value="우편번호 찾기"><br>
-					<input type="text" id="sample4_roadAddress" placeholder="도로명주소">
-					<input type="text" id="sample4_jibunAddress" placeholder="지번주소">
-					<span id="guide" style="color:#999;display:none"></span>
-					<input type="text" id="sample4_detailAddress" placeholder="상세주소">
-					<input type="text" id="sample4_extraAddress" placeholder="참고항목">
-					<table>
-						<tbody>
-							<tr>
-								<th>이름</th>
-								<td>문종성</td>
-							</tr>
-							<tr>
-								<th>배송주소</th>
-								<td>부산광역시 수영구...</td>
-							</tr>
-							<tr>
-								<th>휴대폰 번호</th>
-								<th>010-5466-0378</th>
-							</tr>
-						</tbody>
-					</table>
-				</div>
-			</section>
-			<button class="buying__button">구매하기</button>
-			<button class="cancel__button">취소하기</button>
-			<th:block th:replace="/page/fragment/footer"></th:block>
+						<div class="button__container">
+							<button type="submit" class="buying__button">구매하기</button>
+							<button class="cancel__button">취소하기</button>
+						</div>
+						</form>
+					</div>
+				</section>
+				<th:block th:replace="/page/fragment/footer"></th:block>
 		</div>
 	</body>
 </html>
