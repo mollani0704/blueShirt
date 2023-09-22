@@ -51,6 +51,8 @@
 				<div class="sec1__container">
 					<h1>Billing Address</h1>
 					<form th:object="${order}" method="post">
+						<input class="stockQuantity" name="stockQuantity" type="hidden">
+						<input class="totalPriceResult" name="totalPriceResult" type="hidden">
 						<div class="order__info">
 							<label>Name</label>
 							<input class="name" name="name" type="text" th:field="*{name}" 

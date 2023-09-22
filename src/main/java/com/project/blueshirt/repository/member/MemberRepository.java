@@ -14,4 +14,5 @@ public interface MemberRepository {
 	
 	// SpringSecurity에 관한 함수
 	public Member findByUsername(String username) throws Exception;
+	public String findId(String username) throws Exception;
 }

@@ -16,7 +16,9 @@ import com.project.blueshirt.model.Member;
 import com.project.blueshirt.service.member.MemberService;
 
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 
+@Slf4j
 @RestController
 @RequiredArgsConstructor
 public class MemberController {
@@ -63,6 +65,23 @@ public class MemberController {
 		
 		return ResponseEntity.ok().body(status);	
 	}
+	
+//	
+//	@PostMapping("/auth/findId")
+//	public ResponseEntity<?> findId(String username) {
+//		
+//		String findId;
+//		
+//		try {
+//			findId = memberService.findId(username);
+//			log.info("findId = {}", findId);
+//		} catch (Exception e) {
+//			e.printStackTrace();
+//			return ResponseEntity.internalServerError().body(null);
+//		}
+//		
+//		return ResponseEntity.ok().body(findId);
+//	}
 	
 //	@PostMapping("/auth/signin")
 //	public ResponseEntity<?> signin(@RequestBody Member member) {

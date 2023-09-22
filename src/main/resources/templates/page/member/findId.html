@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="/static/css/member/signin.css" />
+        <link rel="stylesheet" href="/static/css/style.css" />
+        <link rel="stylesheet" href="/static/css/index.css" />
+        <script
+            type="text/javascript"
+            src="https://code.jquery.com/jquery-latest.min.js"
+        ></script>
+        <title>Document</title>
+    </head>
+    <body>
+        <div class="container">
+        <th:block th:replace="/page/fragment/header"></th:block>
+            <div class=login__line></div>
+            <div class="login__header">
+                <h1>아이디 찾기</h1>
+                <p>아이디 찾기 페이지입니다.</p>
+            </div>
+            <div class="login__info">
+               <form method="post" action="/signin/findId">
+                 <input
+               		id="username"
+               		name="username"
+               		type="text"
+               		placeholder="이름을 입력해주세요"
+                 />
+                 <button type="submit">아이디 찾기</button>
+               </form>
+               <div th:text="${findId}">test</div>
+            </div>
+            <th:block th:replace="/page/fragment/footer"></th:block>
+        </div>
+    </body>
+</html>

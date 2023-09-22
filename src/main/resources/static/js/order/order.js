@@ -14,6 +14,8 @@ let extraAddress = document.querySelector("#extraAddress");
 const cancelBtn = document.querySelector(".cancel__button");
 const buyingBtn = document.querySelector('.buying__button');
 
+let stockQuantityResult = document.querySelector(".stockQuantity");
+let totalPriceResult = document.querySelector(".totalPriceResult")
 
 cancelBtn.addEventListener("click", () => {
 	location.href = "/items";
@@ -21,12 +23,19 @@ cancelBtn.addEventListener("click", () => {
 
 function changeFn() {
 	const select = document.querySelector('.itemStockQuantity');
-	
-	let price = document.querySelector('.price');
 	let stockQuatity = select.options[select.selectedIndex].value;
 	const totalPrice = document.querySelector('.totalPrice');
-
+	let price = document.querySelector('.price');
+	
 	console.log(`price : ${price.textContent}, stockQuatity : ${stockQuatity}`)
+	console.log(select.options[select.selectedIndex].value);
+	
+	stockQuantityResult.value = stockQuatity;
+	totalPriceResult.value = Number(price.textContent) * Number(stockQuatity);
+	
+	console.log(`stockQuantityResult.value : ${stockQuantityResult.value}`)
+	console.log(`totalPriceResult.value : ${totalPriceResult.value}`)
+	
 	
 	totalPrice.textContent = Number(price.textContent) * Number(stockQuatity);
 }

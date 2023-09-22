@@ -22,6 +22,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import com.project.blueshirt.model.item.Item;
 import com.project.blueshirt.model.order.Order;
 import com.project.blueshirt.service.item.ItemService;
+import com.project.blueshirt.service.order.OrderService;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -32,6 +33,7 @@ import lombok.extern.slf4j.Slf4j;
 public class OrderPageController {
 	
 	private final ItemService itemService;
+	private final OrderService orderService;
 	
 	@GetMapping("/order")
 	public String orderPage(@RequestParam int itemCode, Model model) {
@@ -67,6 +69,11 @@ public class OrderPageController {
 			}
 			return "page/order/order";
 		}
+		
+		log.info("order : {}", order);
+		
+		orderService.orderSave(order);
+		
 		
 		return "redirect:/order/pay";
 	}

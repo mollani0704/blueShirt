@@ -51,5 +51,16 @@
 			userId = #{userId}
 	
 	</select>
+	
+	<select id="findId" parameterType="String" resultType="String">
+		
+		select
+			userId
+		from
+			member
+		where
+			username = #{username}
+	
+	</select>
 
 </mapper>

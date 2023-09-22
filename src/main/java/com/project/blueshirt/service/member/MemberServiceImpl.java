@@ -44,4 +44,16 @@ public class MemberServiceImpl implements MemberService{
 		return result;
 	}
 
+	@Override
+	public String findId(String username) throws Exception {
+		
+		String userId = memberRepository.findId(username);
+		
+		if(userId == null) {
+			return null;
+		} else {
+			return userId;
+		}
+	}
+
 }

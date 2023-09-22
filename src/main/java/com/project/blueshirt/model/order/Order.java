@@ -29,6 +29,8 @@ public class Order {
 	private String jibunAddress;
 	private String extraAddress;
 	private int itemCode;
+	private int stockQuantity;
+	private int totalPriceResult;
 	
 	public Order() {
 		

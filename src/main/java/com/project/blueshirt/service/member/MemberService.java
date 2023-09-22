@@ -7,5 +7,6 @@ public interface MemberService{
 	
 	public Boolean signUpMember(Member member) throws Exception;
 	public Boolean findMember(String userId) throws Exception;
+	public String findId(String username) throws Exception;
 
 }
