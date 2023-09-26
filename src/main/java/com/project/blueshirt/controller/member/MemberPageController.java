@@ -17,6 +17,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.project.blueshirt.model.review.Review;
 import com.project.blueshirt.service.member.MemberService;
@@ -72,19 +73,19 @@ public class MemberPageController {
 		return "page/member/findId";
 	}
 	
-	@PostMapping("/signin/findId")
-	public String findId(String username, Model model) {
-		String findId = null;
-		try {
-			findId = memberService.findId(username);
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-		
-		log.info("findId = {}", findId);
-		model.addAttribute("findId", findId);
-		
-		return "redirect:/signin/findId";
-	}
+//	@PostMapping("/signin/findId")
+//	public String findId(String username, RedirectAttributes redirectAttributes) {
+//		String findId = null;
+//		try {
+//			findId = memberService.findId(username);
+//		} catch (Exception e) {
+//			e.printStackTrace();
+//		}
+//		
+//		log.info("findId = {}", findId);
+//		redirectAttributes.addAttribute("findId", findId);
+//		
+//		return "redirect:/signin/findId";
+//	}
 	
 }

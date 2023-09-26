@@ -7,6 +7,7 @@ import javax.validation.Valid;
 
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
@@ -65,27 +66,30 @@ public class MemberController {
 		
 		return ResponseEntity.ok().body(status);	
 	}
+		
+	/*
+	 * 로그인 페이지에서 아이디 찾기 기능
+	 */
+	@PostMapping("/auth/findId")
+	public ResponseEntity<?> findId(@RequestBody(required = false) String userNameData) {
+		
+		log.info("username = {}", userNameData);
+		String findId;
+		
+		try {
+			findId = memberService.findId(userNameData);
+			log.info("findId = {}", findId);
+		} catch (Exception e) {
+			e.printStackTrace();
+			return ResponseEntity.internalServerError().body(null);
+		}
+		
+		return ResponseEntity.ok().body(findId);
+	}
 	
-//	
-//	@PostMapping("/auth/findId")
-//	public ResponseEntity<?> findId(String username) {
-//		
-//		String findId;
-//		
-//		try {
-//			findId = memberService.findId(username);
-//			log.info("findId = {}", findId);
-//		} catch (Exception e) {
-//			e.printStackTrace();
-//			return ResponseEntity.internalServerError().body(null);
-//		}
-//		
-//		return ResponseEntity.ok().body(findId);
-//	}
-	
+
 //	@PostMapping("/auth/signin")
-//	public ResponseEntity<?> signin(@RequestBody Member member) {
-//		
+//	public ResponseEntity<?> signin(@RequestBody Member member) {		
 //		boolean status = false;
 //		try {
 //			status = memberService.signInMember(member);
@@ -98,5 +102,4 @@ public class MemberController {
 //		
 //		return ResponseEntity.ok().body(status);
 //	}
-	
 }

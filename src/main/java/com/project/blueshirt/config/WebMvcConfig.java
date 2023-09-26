@@ -7,21 +7,28 @@ import java.nio.charset.StandardCharsets;
 import org.springframework.beans.factory.annotation.Configurable;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.core.io.Resource;
+import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 import org.springframework.web.servlet.resource.PathResourceResolver;
 
+import com.project.blueshirt.filter.TestInterceptor;
+
 @Configurable
 public class WebMvcConfig implements WebMvcConfigurer{
-
+	
 	@Value("${file.path}")
 	private String filePath;
 	
 	@Override
+	public void addInterceptors(InterceptorRegistry registry) {
+		registry.addInterceptor(new TestInterceptor())
+			.order(1)
+			.addPathPatterns("/**");
+	}
+	
+	@Override
 	public void addResourceHandlers(ResourceHandlerRegistry registry) {
-		
-WebMvcConfigurer.super.addResourceHandlers(registry);
-		
 		registry.addResourceHandler("/image/**")
 			.addResourceLocations("file:///" + filePath)
 			.setCachePeriod(60 * 60)

@@ -11,6 +11,7 @@
             type="text/javascript"
             src="https://code.jquery.com/jquery-latest.min.js"
         ></script>
+        <script src="/static/js/member/findId.js" defer></script>
         <title>Document</title>
     </head>
     <body>
@@ -25,14 +26,15 @@
                <form method="post" action="/signin/findId">
                  <input
                		id="username"
-               		name="username"
+               		name="userNameData"
                		type="text"
                		placeholder="이름을 입력해주세요"
                  />
-                 <button type="submit">아이디 찾기</button>
+                 <button class="findId__button" type="submit">아이디 찾기</button>
                </form>
-               <div th:text="${findId}">test</div>
+            <div class="findId__container"></div>
             </div>
+            
             <th:block th:replace="/page/fragment/footer"></th:block>
         </div>
     </body>
