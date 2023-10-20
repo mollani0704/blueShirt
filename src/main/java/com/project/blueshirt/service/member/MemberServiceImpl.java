@@ -1,21 +1,33 @@
 package com.project.blueshirt.service.member;
 
+
+
+import java.security.SecureRandom;
+import java.util.Optional;
+import java.util.Random;
+
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import com.project.blueshirt.dto.SignInDto;
+import com.project.blueshirt.dto.member.FindPasswordDto;
 import com.project.blueshirt.model.Member;
 import com.project.blueshirt.model.Role;
 import com.project.blueshirt.repository.member.MemberRepository;
+import com.project.blueshirt.service.mail.MailService;
 
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 
+@Slf4j
 @Service
 @RequiredArgsConstructor
 public class MemberServiceImpl implements MemberService{
 
 	private final MemberRepository memberRepository;
 	private final BCryptPasswordEncoder encoder;
+
 	
 	@Override
 	public Boolean signUpMember(Member member) throws Exception {
@@ -56,4 +68,12 @@ public class MemberServiceImpl implements MemberService{
 		}
 	}
 
+	@Override
+	public String findPassword(FindPasswordDto findPasswordDto) throws Exception {
+		
+		String userPassword = memberRepository.findPassword(findPasswordDto);
+		log.info("userPassword = {}", userPassword);
+		
+		return null;
+	}
 }

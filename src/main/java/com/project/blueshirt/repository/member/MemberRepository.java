@@ -4,6 +4,7 @@ import org.apache.ibatis.annotations.Mapper;
 import org.springframework.stereotype.Repository;
 
 import com.project.blueshirt.dto.SignInDto;
+import com.project.blueshirt.dto.member.FindPasswordDto;
 import com.project.blueshirt.model.Member;
 
 @Repository
@@ -15,4 +16,5 @@ public interface MemberRepository {
 	// SpringSecurity에 관한 함수
 	public Member findByUsername(String username) throws Exception;
 	public String findId(String username) throws Exception;
+	public String findPassword(FindPasswordDto findPasswordDto) throws Exception;
 }

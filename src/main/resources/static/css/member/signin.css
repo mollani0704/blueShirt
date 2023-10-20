@@ -130,6 +130,16 @@ login__left form {
 	font-size: 14px;
 }
 
+.field-error {
+	height: 36px;
+	line-height: 36px;
+	text-indent: 22px;
+	display: block;
+	width: 100%;
+	background-color: #F8D7DA;
+	color: red;
+}
+
 #idSave {
 	border-radius: 0;
 	background: url("/static/img/element_check.png") no-repeat 50% 100%;

@@ -41,6 +41,8 @@
                                 type="password"
                                 placeholder="패스워드를 입력해주세요"
                             /><br />
+                            <div th:if="${error}" class="field-error" th:text="${exception}"></div>
+                            
                             <label class=id__save--label>아이디 저장
                             	<input type="checkbox" name=idSave id="idSave">
                             </label>
@@ -66,7 +68,7 @@
                     		<dd>아이디 또는 비밀번호 정보를 찾으실 수 있습니다.</dd>
                     		<div class="btnz">
                     			<a href="/signin/findId" class="btlogin">아이디 찾기</a>
-                    			<a href="#" class="btlogin">비밀번호 찾기</a>
+                    			<a href="/signin/findPassword" class="btlogin">비밀번호 찾기</a>
                     		</div>
                     	</dl>
                     </div>

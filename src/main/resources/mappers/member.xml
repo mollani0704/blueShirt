@@ -62,5 +62,17 @@
 			username = #{username}
 	
 	</select>
+	
+	<select id="findPassword" parameterType="com.project.blueshirt.dto.member.FindPasswordDto" resultType="String">
+		
+		select
+			password
+		from
+			member
+		where
+			username = #{userNameData} and
+			userId = #{userIdData};
+		
+	</select>
 
 </mapper>

@@ -17,9 +17,25 @@
                     <li class="menu__item"><a href="/review">작업후기</a></li>
                     <li class="menu__item"><a href="/items">청소용품</a></li>
                 </ul>
-                <ul class="login__menu">
+                <!-- 
+                <ul th:if="${session.loginMemberName == null}" class="login__menu">
                     <li class="login" onclick="location.href='/signin'">로그인</li>
                     <li class="signup" onclick="location.href='/signup'">회원가입</li>
+                </ul>
+                  <ul th:if="${session.loginMemberName != null}" class="login__menu">
+                    <li class="user_name" th:text="|${username}님 환영합니다.|">로그인</li>
+                    <li class="user_logout" onclick="location.href='/logout'">로그아웃</li>
+               sec:authentication="principal.username"
+                </ul>
+                 -->
+                <ul sec:authorize="!isAuthenticated()" class="login__menu">
+                    <li class="login" onclick="location.href='/signin'">로그인</li>
+                    <li class="signup" onclick="location.href='/signup'">회원가입</li>
+                </ul>
+                 
+                 <ul sec:authorize="isAuthenticated()"  class="login__menu">
+                    <li class="user_name" th:text="|${#authentication.principal.username}님 환영합니다.|"></li>
+                    <li class="user_logout" onclick="location.href='/logout'">로그아웃</li>
                 </ul>
       </header>
 </body>

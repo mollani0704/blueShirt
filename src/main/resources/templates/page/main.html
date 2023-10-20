@@ -13,6 +13,7 @@
     </head>
     <body>
         <div class="container">
+            <!-- 
             <header class="header">
                 <div class="logo" onclick="location.href='/'">
                     <img src="/static/img/logo2.JPG" alt="logo" />
@@ -23,11 +24,18 @@
                     <li class="menu__item"><a href="/review">작업후기</a></li>
                     <li class="menu__item"><a href="/items">청소용품</a></li>
                 </ul>
-                <ul class="login__menu">
+                <ul th:if="${username == null}" class="login__menu">
                     <li class="login" onclick="location.href='/signin'">로그인</li>
                     <li class="signup" onclick="location.href='/signup'">회원가입</li>
                 </ul>
+                
+                <ul th:if="${username != null}" class="login__menu">
+                    <li class="user_name" th:text="|${username}님 환영합니다.|">로그인</li>
+                    <li class="user_logout" onclick="location.href='/logout'">로그아웃</li>
+                </ul>
             </header>
+             -->
+             <th:block th:replace="/page/fragment/header"></th:block>
             <div class="main__line"></div>
             <section class="section">
                 <div class="section1">

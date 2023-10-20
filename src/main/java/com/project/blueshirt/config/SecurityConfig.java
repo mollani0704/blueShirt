@@ -11,6 +11,7 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 import org.springframework.security.config.annotation.web.configuration.WebSecurityCustomizer;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
+import org.springframework.security.web.authentication.AuthenticationFailureHandler;
 
 import com.project.blueshirt.config.auth.PrincipalDetailService;
 
@@ -23,6 +24,7 @@ import lombok.RequiredArgsConstructor;
 public class SecurityConfig {
 	
 	private final PrincipalDetailService principalDetailService;
+	private final AuthenticationFailureHandler customFailureHandler;
 	
 	@Bean
 	public BCryptPasswordEncoder Encoder() {
@@ -56,7 +58,13 @@ public class SecurityConfig {
 //				.usernameParameter("userId")
 				.loginPage("/signin")
 				.loginProcessingUrl("/auth/loginProc")
-				.defaultSuccessUrl("/");
+				.failureHandler(customFailureHandler)
+				.defaultSuccessUrl("/")
+			.and()
+				.logout()
+				.logoutSuccessUrl("/")
+				.invalidateHttpSession(true)
+				.deleteCookies("JSESSIONID");
 		
 		return http.build();
 	}

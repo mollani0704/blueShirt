@@ -5,10 +5,11 @@ const password = document.querySelector("#password");
 
 const signIn_button = document.querySelector('.button');
 
+/*
 signIn_button.addEventListener('click', () => {
 	
 	console.log('test');
-	/*
+	
 	let data = {
 		username : userId.value,
 		password : password.value
@@ -28,5 +29,6 @@ signIn_button.addEventListener('click', () => {
 		console.log(error);
 		
 	})
-	*/
+	
 })
+*/
