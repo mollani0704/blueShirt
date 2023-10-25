@@ -26,44 +26,57 @@
                 <div class="signup__form">
                 	<div class="signup__container">
 	                	<h1>회원가입</h1>
-	                    <form method="post">
-	                    <!-- 
+	                    <form th:object="${member}" method="post">
+	                    
+	                     	<div class="signup__data usernameData">
+	                     	<!--  
 	                        <label for="username">이름</label>
-	                     -->
-	                        <input
-	                            id="username"
-	                            name="username"
-	                            type="text"
-	                            placeholder="이름을 입력해주세요"
-	                        /><br />
-	                        <!--  
+	                   		-->
+		                     	<input
+		                            id="username"
+		                            name="username"
+		                            type="text"
+		                            placeholder="이름을 입력해주세요"
+		                        />
+		                        <div class="errorMessage username">test</div>
+	                     	</div>
+	                     
+	                        <div class="signup__data userIdData">
+	                         <!-- 
 	                        <label for="userId">닉네임</label>
-	                        -->
-	                        <input
+	                         -->
+	                           <input
 	                            id="userId"
 	                            name="userId"
 	                            type="text"
 	                            placeholder="닉네임을 입력해주세요"
-	                        /><br />
+	                        	/>
+	                        	<div class="errorMessage userId">test</div>
+	                        </div>
+	                        <div class="signup__data passwordData">
+		                        <!-- 
+		                        <label for="password">비밀번호</label>
+		                        -->
+		                        <input
+		                            id="password"
+		                            name="password"
+		                            type="password"
+		                            placeholder="패스워드를 입력해주세요"
+		                        />
+		                        <div class="errorMessage password">test</div>
+	                        </div>
+	                        <div class="signup__data">
+		                        <!-- 
+		                        <label for="address">주소</label>
+		                         -->
+		                        <input
+		                            id="address"
+		                            name="address"
+		                            type="text"
+		                            placeholder="주소를 입력해주세요"
+		                        /><br />
+	                        </div>
 	                       
-	                        <!-- 
-	                        <label for="password">비밀번호</label>
-	                         -->
-	                        <input
-	                            id="password"
-	                            name="password"
-	                            type="password"
-	                            placeholder="패스워드를 입력해주세요"
-	                        /><br />
-	                        <!-- 
-	                        <label for="address">주소</label>
-	                         -->
-	                        <input
-	                            id="address"
-	                            name="address"
-	                            type="text"
-	                            placeholder="주소를 입력해주세요"
-	                        /><br />
 	                    </form>
 	                    <button class="check__id--btn">중복확인</button>
 	                    <button class="button">회원가입</button>

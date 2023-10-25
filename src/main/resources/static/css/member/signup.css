@@ -155,6 +155,12 @@
 	border: var(--color-dark-blue) 1px solid;
 }
 
+.errorMessage {
+	visibility: hidden;
+	color: #dc3545;
+	font-weight: bold;
+}
+
 .button {
 	width: 100%;
 	margin: 0 2px;

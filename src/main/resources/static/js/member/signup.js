@@ -58,7 +58,73 @@ signup_button.addEventListener('click', () => {
 		location.href = "/"
 	})
 	.fail((error) => {
-		console.log(error);
-		alert(error.responseText)
+		let errorMessages = error.responseJSON;
+		console.log(errorMessages);
+		showErrorMessage(errorMessages);
+
 	})
 });
+
+function showErrorMessage(errorMessages) {
+	
+	// 이런 방법을 써보자 display를 none으로 해놓고 에러가 있으면
+	// 보여주는 방식을 사용하면 되는 거 아닌가?
+	
+	
+	let errorMessageUsername = document.querySelector('.errorMessage.username');;
+	let errorMessageUserId = document.querySelector('.errorMessage.userId');;
+	let errorMessagePassword = document.querySelector('.errorMessage.password');;
+	
+	if(errorMessages.username) {		
+		errorMessageUsername.innerText = errorMessages.username;
+		errorMessageUsername.style.visibility = 'visible';
+	} else {
+		errorMessageUsername.style.visibility = 'hidden';
+	}
+	
+	if(errorMessages.userId) {
+		errorMessageUserId.innerText = errorMessages.userId;
+		errorMessageUserId.style.visibility = 'visible';
+	} else {
+		errorMessageUserId.style.visibility = 'hidden';
+	}
+	
+	if(errorMessages.password) {
+		errorMessagePassword.innerText = errorMessages.password;
+		errorMessagePassword.style.visibility = 'visible';
+	} else {
+		errorMessagePassword.style.visibility = 'hidden';
+	}
+	
+	
+	/*
+	const usernameData = document.querySelector('.usernameData')
+	const userIdData = document.querySelector('.userIdData')
+	const passwordData = document.querySelector('.passwordData')
+	
+	let errorMessage = document.createElement("div");
+	let spanTag = document.createElement('span');
+	
+	errorMessage.append(spanTag);
+	
+	if(errorMessages.username) {
+		spanTag.append(errorMessages.username);
+		usernameData.appendChild(errorMessage);
+	
+	} else {
+		
+	}
+	if(errorMessages.password) {
+		password.after(errorMessages.password);
+	} else {
+		password.after("")
+	}
+	if(errorMessages.userId) {
+		userId.after(errorMessages.userId);
+	} else {
+		userId.after("")
+	}
+	*/
+	
+	
+}

@@ -17,7 +17,7 @@ public class Member {
 	
 	@NotBlank
 	@Pattern(regexp = "^(?=.*[a-zA-Z])(?=.*\\d)(?=.*[-~!@#$%^&*_+=])[a-zA-Z\\d-~!@#$%^&*_+=]{8,16}$", 
-			message = "비밀번호 최소 8글자 이상 써주세요")
+			message = "비밀번호 최소 8글자 이상, 특수문자 넣어서 써주세요")
 	private String password;
 	private String address;
 	private String role;

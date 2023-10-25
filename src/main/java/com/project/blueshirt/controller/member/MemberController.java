@@ -78,13 +78,16 @@ public class MemberController {
 		
 		if(bindingResult.hasErrors()) {
 			// validation 체크
+			
 			Map<String, String> errorMessage = new HashMap<String, String>();
 			
 			bindingResult.getFieldErrors().forEach(error -> {
 				errorMessage.put(error.getField(), error.getDefaultMessage());
 			});
 			
+			
 			return ResponseEntity.badRequest().body(errorMessage);
+			
 		}
 		
 		try {
