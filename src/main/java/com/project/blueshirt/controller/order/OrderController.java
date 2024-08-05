@@ -12,6 +12,7 @@ import org.springframework.util.StringUtils;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.FieldError;
 import org.springframework.validation.annotation.Validated;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -30,6 +31,11 @@ public class OrderController {
 	// 내가 validation에 대한 것을 이제 Spring과 thymeleaf를 이용해서 화면에 출력할려고 한다
 	// 하지만 이렇게 내가 배운 validation을 이용하려면 Controller를 이용해야 한다. 
 	// 그래서 RestController에서 값을 옮겨야 겠지.
+	
+	@GetMapping("/api/item/test2")
+	public ResponseEntity<?> gitTest2Code() {
+		return ResponseEntity.ok(null);
+	}
 	
 	@PostMapping("/api/order")
 	public ResponseEntity<?> saveOrder(@RequestBody Order order, 
