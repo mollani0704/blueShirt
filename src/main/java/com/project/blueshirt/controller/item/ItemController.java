@@ -61,6 +61,11 @@ public class ItemController {
 		return ResponseEntity.ok().body(result);
 	}
 	
+	@GetMapping("/api/item/test")
+	public ResponseEntity<?> gitTestCode() {
+		return ResponseEntity.ok(null);
+	}
+	
 	
 	
 	
