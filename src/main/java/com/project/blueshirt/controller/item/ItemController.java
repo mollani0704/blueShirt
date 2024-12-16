@@ -71,13 +71,5 @@ public class ItemController {
 		return ResponseEntity.ok(null);
 	}
 	
-	@GetMapping("/api/item/test4")
-	public ResponseEntity<?> gitTestCode4() {
-		return ResponseEntity.ok(null);
-	}
-	
-	
-	
-	
-	
+//	Test4 지우기 Git Rollback 공부
 }
