@@ -67,6 +67,17 @@ public class ItemController {
 	}
 	
 	
-	
+	@GetMapping("/api/item/test5")
+	public ResponseEntity<?> gitTestCode5() {
+		return ResponseEntity.ok(null);
+	}
+	@GetMapping("/api/item/test6")
+	public ResponseEntity<?> gitTestCode6() {
+		return ResponseEntity.ok(null);
+	}
+	@GetMapping("/api/item/test7")
+	public ResponseEntity<?> gitTestCode7() {
+		return ResponseEntity.ok(null);
+	}
 	
 }
